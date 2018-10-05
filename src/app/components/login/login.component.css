@@ -1,0 +1,13 @@
+.inputs{
+    border-top:none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 5px solid black; 
+    background: green;
+    margin-top: 5%; width: 100%; height: 8vh;
+}
+.inputs:focus{
+    border-bottom: 5px solid green;
+    transition-duration: 1s; 
+    outline: 0px;
+}
