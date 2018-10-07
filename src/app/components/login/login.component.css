@@ -17,7 +17,7 @@
 .contenedorLogin {
     position: relative;
     height: 90%;
-    width: 40%;
+    width: 30%;
     margin-left: 20%;
     float: left;
     -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
@@ -26,25 +26,53 @@
 }
 
 .logoLogin {
-    float: left; 
-    background-color: gray; 
-    width: 100px; 
-    height: 100px; 
+    float: left;
+    background-color: gray;
+    width: 100px;
+    height: 100px;
     margin: -50px auto 0px 42%;
     border-radius: 18px 200px 200px 200px;
     -moz-border-radius: 18px 200px 200px 200px;
     -webkit-border-radius: 18px 200px 200px 200px;
     border: 0px solid #000000;
+    padding: 15px;
+    color: white;
+    font-size: 50px
 }
-.contenedorInputs{
+.logoLogin:hover{
+    rotate: 6;
+}
+.contenedorInputs {
     height: 60%;
-    width: 70%; 
+    width: 70%;
     margin-left: 16%
 }
-.inputsLoguin{
-    position: relative; 
+
+.inputsLoguin {
+    position: relative;
     height: 80%;
-    width: 20%; 
-    margin-left: 2%; 
+    width: 20%;
+    margin-left: 2%;
     float: left;
+    padding-left: 180px;
+}
+
+.informacion {
+    float: left;
+    padding: 2%;
+    height: 440px;
+    width: 300px;
+    margin-left: 3%;
+    -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+}
+
+.iconoInput{
+    position: relative; 
+    margin: -40px 10px auto -35px; 
+    float: left; color:black; 
+    width:40; 
+    height:40;
+    font-size: 30px
 }

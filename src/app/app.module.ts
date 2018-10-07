@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { OfertaComponent } from './components/oferta/oferta.component';
 import { DemandaComponent } from './components/demanda/demanda.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes =[
   {
@@ -36,7 +37,8 @@ const appRoutes: Routes =[
     HomeComponent,
     PaginaPrincipalComponent,
     OfertaComponent,
-    DemandaComponent
+    DemandaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
