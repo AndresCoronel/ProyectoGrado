@@ -1,3 +1,4 @@
+
 .inputs {
     border-top: none;
     border-left: none;
@@ -9,7 +10,7 @@
 }
 
 .inputs:focus {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #32936F;
     transition-duration: 1s;
     outline: 0px;
 }
@@ -23,11 +24,12 @@
     -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    
 }
 
 .logoLogin {
     float: left;
-    background-color: gray;
+    background-color: #395E66;
     width: 100px;
     height: 100px;
     margin: -50px auto 0px 42%;
@@ -70,9 +72,10 @@
 
 .iconoInput{
     position: relative; 
+    color: #395E66;
     margin: -40px 10px auto -35px; 
     float: left; color:black; 
     width:40; 
     height:40;
-    font-size: 30px
+    font-size: 30px;
 }
