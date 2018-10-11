@@ -159,6 +159,10 @@ hr {
     cursor: pointer;
     background-color: black;
     text-decoration: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
 
 }
 
