@@ -1,0 +1,20 @@
+<mat-toolbar class="nav">
+    <mat-toolbar-row>
+      
+      <span onclick="location.href='/'">SINA</span>
+      <button mat-button style="margin-left: 60px" onclick="location.href='/demanda'"
+      class="btnOpcion"><mat-icon style="margin-right: 5px">add</mat-icon >Publicar Demanda</button>
+      <button mat-button class="btnOpcion"><mat-icon style="margin-right: 5px">not_listed_location</mat-icon>Plan De Compra</button>
+      <button mat-button class="btnOpcion"><mat-icon style="margin-right: 5px">spa</mat-icon>Acerca De Nosotros</button>
+      <span class="example-spacer"></span>
+        <button mat-mini-fab [matMenuTriggerFor]="menu" class="btnMenu">
+            <mat-icon>toc</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="menu">
+          <button mat-menu-item onclick="location.href='/perfil-consumidor'"><mat-icon>perm_identity</mat-icon>Perfil</button>
+          <button mat-menu-item><mat-icon>search</mat-icon>Ayuda</button>
+          <button mat-menu-item><mat-icon>build</mat-icon>Configuración</button>
+          <button mat-menu-item><mat-icon>close</mat-icon>Cerrar Sesión</button>
+        </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>

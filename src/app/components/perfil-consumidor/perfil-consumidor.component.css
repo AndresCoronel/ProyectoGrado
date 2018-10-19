@@ -1,0 +1,139 @@
+.perfilGeneral{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.perfil{
+    width: 20%;
+    height: 570px;
+    background-color:rgb(248, 248, 248);
+    margin-left: 15%;
+    margin-top: 4%;
+    opacity: 0.8;
+    position: absolute;
+    float: left;
+    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+}
+.imagenPerfil{
+    width: 45%;
+    height: 20%;
+    margin: auto;
+    margin-top: 5%;
+    background-color:white;
+    border-radius: 50%;
+    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+}
+.nombrePerfil{
+    width: 90%;
+    height: 6%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 5px;
+}
+.informacionPerfil{
+    width: 90%;
+    height: 30%;
+    margin: 5%;
+    padding: 5px;
+}
+.modificarPerfil{
+    width: 43%;
+    height: 6%;
+    margin: auto;
+}
+.elementosPerfil{
+    width: 50%;
+    height: 600px;
+    margin-top: 4%;
+    margin-left: 40%;
+    position: absolute;
+   
+}
+.campos{
+    width: 100%;
+    height: 8%;
+    background-color:rgb(64, 150, 118);
+    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+}
+.contenido{
+    display: flex;
+    width: 98%;
+    background-color: rgb(248, 248, 248);
+    margin-top: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 16px;
+    border-radius: 8px;
+    height: 500px;
+    overflow-y:scroll;
+    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+  }
+  .imagenLista{
+      width: 70px;
+      height: 70px;
+      margin: 5px;
+  }
+  .infoLista{
+      
+    width: 90%;
+    height: 70px;
+    margin: 5px;
+}
+.cartaOferta{
+    width: 45%;
+    border-radius: 3%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+}
+.headerCarta{
+  margin: 5px;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.imagenOferta{
+    width: 98%; 
+    height: 200px;
+    margin: 1%;
+    margin-top: 10px;
+}
+.headerCartaOferta{
+    background-color: #32936F; 
+    padding: 2px;
+    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+}
+.boton{
+    background-color: #32936F;
+    position: relative;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.carta{
+    padding: 10px;
+}
+.descripcion{
+    border-bottom: 1px solid #32936F; 
+    padding: 3px; 
+    text-align: justify;
+    font-size: 12px;
+
+}

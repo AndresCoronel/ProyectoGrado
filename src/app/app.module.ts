@@ -11,6 +11,16 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
 import { OfertaComponent } from './components/oferta/oferta.component';
 import { DemandaComponent } from './components/demanda/demanda.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PerfilConsumidorComponent } from './components/perfil-consumidor/perfil-consumidor.component';
+//Animations
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//Material
+import {MaterialModule} from "./material";
+import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
+
+
+
+
 
 const appRoutes: Routes =[
   {
@@ -27,6 +37,9 @@ const appRoutes: Routes =[
   },
   {
     path: 'demanda', component: DemandaComponent
+  },
+  {
+    path: 'perfil-consumidor', component: PerfilConsumidorComponent
   }
 ]
 @NgModule({
@@ -38,11 +51,15 @@ const appRoutes: Routes =[
     PaginaPrincipalComponent,
     OfertaComponent,
     DemandaComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilConsumidorComponent,
+    BarraNavegacionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MaterialModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
