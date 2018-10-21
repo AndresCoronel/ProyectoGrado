@@ -1,0 +1,68 @@
+<div class="card bg-dark text-white container" style="margin-top: 1%">
+    <div class="card-header">CREAR</div>
+    <div class="card-body">
+  
+      <form>
+          <div class="form-group row">
+              <label for="cedula" class="col-form-label col-sm-2">Cédula</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="consumidor.cedula_consumidor" name="cedula_consumidor">
+              </div>
+            </div>
+
+        <div class="form-group row">
+          <label for="nombre_consumidor" class="col-form-label col-sm-2">Nombre</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="consumidor.nombre_consumidor" name="nombre_consumidor">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="apellido_consumidor" class="col-form-label col-sm-2">Apellido</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="consumidor.apellido_consumidor" name="apellido_consumidor">
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="telefono_consumidor" class="col-form-label col-sm-2">telefono</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" [(ngModel)]="consumidor.telefono_consumidor" name="telefono_consumidor">
+            </div>
+          </div>
+  
+        <div class="form-group row">
+          <label for="correo_consumidor" class="col-form-label col-sm-2">correo</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="consumidor.correo_consumidor" name="correo_consumidor">
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="contrasenia_consumidor" class="col-form-label col-sm-2">contraseña</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" [(ngModel)]="consumidor.contrasenia_consumidor" name="contrasenia_consumidor">
+            </div>
+          </div>
+
+          <div class="form-group row">
+              <label for="usuario_consumidor" class="col-form-label col-sm-2">usuario_consumidor</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="consumidor.usuario_consumidor" name="usuario_consumidor">
+              </div>
+            </div>
+  
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <button class="btn btn-primary" role="button" (click)='crearConsumidor()' *ngIf="!consumidor.cedula_consumidor else elseBlock">Crear</button>
+  
+            <ng-template #elseBlock>
+              <button class="btn btn-primary" role="button" (click)='ActualizarConsumidor()'>Editar</button>
+            </ng-template>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+  </div>
+  

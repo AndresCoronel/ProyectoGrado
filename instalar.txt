@@ -1,0 +1,9 @@
+npm install sweetalert2 --save
+npm install webpack webpack-cli
+npm install -g @angular/cli 
+/* generar servicio
+ng g service nombre
+/*generar clase
+ng g class nombre
+/*generar componente
+ng g c nombre
