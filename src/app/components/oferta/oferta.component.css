@@ -1,0 +1,21 @@
+.titulo{
+    padding-bottom: 20px; 
+    margin: 7% 0px 5% 10%;  
+    border-bottom: 1px solid #395E66;
+}
+
+
+.informacion {
+    padding: 2%;
+    margin: 0% 0% 5% 10%;
+    height: auto;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    background-color: white;
+    opacity: 0.8;
+}
+.imagen{
+    margin: 11.5% 0px 5% 0%;  
+}

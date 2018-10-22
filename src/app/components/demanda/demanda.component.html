@@ -11,12 +11,12 @@
       <div style="width: 100%;" class="row">
 
         <div class="col-sm-8" style="margin: 7% auto auto 19%">
-          <input placeholder="Nombre del producto" class="inputs col-sm-12">
+          <input placeholder="Nombre del producto" class="inputs col-sm-12" [(ngModel)]="demanda.nombre_producto" name="nombre_producto">
           <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
         </div>
 
         <div class="col-sm-6 separador">
-          <input placeholder="Cantidad producto" type="number" class="inputs">
+          <input placeholder="Cantidad producto" type="number" class="inputs" [(ngModel)]="demanda.cantidad_producto" name="cantidad_producto">
           <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
         </div>
 
@@ -59,12 +59,12 @@
   
           <div class="separador col-sm-6" style="margin-top: 5%">
               <h3 style="font-size: 18px">Ciudad:</h3>
-              <select style="width: 100%">
+              <select style="width: 100%" [(ngModel)]="demanda.cedula_consumidor" name="cedula_consumidor">
                 <option value="">Seleccione...</option>
-                <option value="KG">KG</option>
-                <option value="ARROBA">ARROBA</option>
-                <option value="BULTO">BULTO</option>
-                <option value="audi">Audi</option>
+                <option value="2">KG</option>
+                <option value="2">ARROBA</option>
+                <option value="2">BULTO</option>
+                <option value="2">Audi</option>
               </select>
             </div>
   
@@ -75,9 +75,9 @@
 
         <div class="col-sm-12 separador">
             <h3 style="font-size: 18px">Descripción del producto:</h3>
-          <textarea placeholder="Descripción del producto" style="width: 100%; height: 10vh;"></textarea>
+          <textarea placeholder="Descripción del producto" style="width: 100%; height: 10vh;" [(ngModel)]="demanda.ubicacion_producto" name="ubicacion_producto"></textarea>
         </div>
-        <button type="button" style="margin: 5% auto auto 38%; font-size: 20px; background-color: #32936F" class="btn btn-success">Publicar</button>
+        <button type="button" style="margin: 5% auto auto 38%; font-size: 20px; background-color: #32936F" (click)='creaDemanda()' class="btn btn-success">Publicar</button>
         </div>
         
     </div>
