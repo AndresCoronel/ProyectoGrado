@@ -11,7 +11,7 @@
 .inputs:focus {
     border-bottom: 2px solid #32936F;
     transition-duration: 0.5s;
-    outline: 0px;
+    outline: 0px; outline: 0px;
 }
 
 .contenedorDemanda {

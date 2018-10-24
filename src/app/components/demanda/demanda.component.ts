@@ -16,12 +16,10 @@ export class DemandaComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.demandaService.getDemandas().subscribe((demandas)=>{
-      this.demandas=demandas
-    })
   }
 
   cargarDemanda(): void {
+    
     this.activatedRoute.params.subscribe(params => {
       let id_demanda = params['id_demanda'];
       if (id_demanda) {

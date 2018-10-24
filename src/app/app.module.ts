@@ -22,7 +22,8 @@ import {MaterialModule} from "./material";
 import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 
 const appRoutes: Routes = [
-  { path: 'perfil-consumidor', component: PerfilConsumidorComponent }
+  { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
+  { path: 'principal', component: PaginaPrincipalComponent },
   { path: '', component: HomeComponent },
   { path: 'registro', component: RegistroConsumidorComponent },
   { path: 'inicioSesion', component: LoginComponent },
