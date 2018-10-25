@@ -15,10 +15,16 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.cargarOferta();
+
    this.ofertaService.getOfertas().subscribe(
      (ofertas) => { this.ofertas = ofertas}
    )
     
+  }
+  sal(id_oferta: string) {
+    console.log(id_oferta)
+    this.router.navigate(['/oferta'])
   }
   cargarOferta(): void {
     this.activatedRoute.params.subscribe(params => {

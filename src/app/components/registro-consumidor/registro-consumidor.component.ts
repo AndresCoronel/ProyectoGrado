@@ -16,6 +16,8 @@ export class RegistroConsumidorComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.cargarConsumidor();
+    
     this.consumidorService.getConsumidores().subscribe(
       (consumidores) => { this.consumidores = consumidores }
     );

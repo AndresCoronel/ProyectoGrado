@@ -89,13 +89,15 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
             <div class="btnVerMas" style="position: relative; margin-top:-1%;padding: 10px; width: 100%;text-align: right; border-radius: 0px 0px 7px 7px; height: 15%; background-color: #32936F">
-              <a style="padding: 10px; cursor: pointer">Ver mas 
+              <a style="padding: 10px; cursor: pointer" [routerLink]="['/oferta', oferta.id_oferta]">Ver mas              
                 <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
               </a>
+              <button type="button" name="editar" [routerLink]="['/oferta', oferta.id_oferta]" class="btn btn-primary">Editar</button>
             </div>
           </div>
-
         </div>
+
+
       </div>
       <hr>      
       <div class="container"><h1 style="margin-bottom: 30px; margin-left: 35%">TESTIMONIOS</h1></div>
