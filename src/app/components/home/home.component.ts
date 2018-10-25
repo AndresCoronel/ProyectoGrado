@@ -9,6 +9,14 @@ import { Oferta } from '../../models/oferta';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  habilitarProductor: boolean= false;
+  habilitarZona: boolean= false;
+  habilitarProducto: boolean= false;
+  habilitarFecha: boolean= false;
+  habilitarCantidad: boolean= false;
+  habilitarPrecio: boolean= false;
+
+
   ofertas: Oferta[];
   private oferta: Oferta = new Oferta();
   constructor(private ofertaService: OfertaService, private router: Router,
@@ -22,10 +30,7 @@ export class HomeComponent implements OnInit {
    )
     
   }
-  sal(id_oferta: string) {
-    console.log(id_oferta)
-    this.router.navigate(['/oferta'])
-  }
+
   cargarOferta(): void {
     this.activatedRoute.params.subscribe(params => {
       let id_oferta = params['id_oferta']
@@ -36,5 +41,54 @@ export class HomeComponent implements OnInit {
       })
   }
   
+  setHabilitarProductor(): void {
+    this.habilitarProductor = true
+    this.habilitarProducto= false;
+    this.habilitarZona = false;
+    this.habilitarFecha = false; 
+    this.habilitarCantidad = false;
+    this.habilitarPrecio = false;
+  }
 
+  setHabilitarZona(): void {
+    this.habilitarZona = true
+    this.habilitarProducto= false;
+    this.habilitarProductor= false;
+    this.habilitarFecha = false; 
+    this.habilitarCantidad = false;
+    this.habilitarPrecio = false;
+  }
+  setHabilitarProducto(): void {
+    this.habilitarProducto = true
+
+    this.habilitarProductor= false;
+    this.habilitarZona = false;
+    this.habilitarFecha = false; 
+    this.habilitarCantidad = false;
+    this.habilitarPrecio = false;
+  }
+  setHabilitarFecha(): void {
+    this.habilitarFecha = true
+    this.habilitarProducto= false;
+    this.habilitarProductor= false;
+    this.habilitarZona = false;
+    this.habilitarCantidad = false;
+    this.habilitarPrecio = false;
+  }
+  setHabilitarCantidad(): void {
+    this.habilitarCantidad = true
+    this.habilitarProducto= false;
+    this.habilitarProductor= false;
+    this.habilitarZona = false;
+    this.habilitarFecha = false; 
+    this.habilitarPrecio = false;
+  }
+  setHabilitarPrecio(): void {
+    this.habilitarPrecio = true
+    this.habilitarProducto= false;
+    this.habilitarProductor= false;
+    this.habilitarZona = false;
+    this.habilitarFecha = false; 
+    this.habilitarCantidad = false;
+  }
 }
