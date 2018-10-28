@@ -1,3 +1,16 @@
+body{
+    background-color: green
+}
+.todo {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    position: absolute;
+    background-image: url("https://www.cornandsoybeandigest.com/sites/cornandsoybeandigest.com/files/3.09%20soybeans-july1.jpg"); /* The image used */ /* Used if the image is unavailable */
+    background-position: bottom; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
 .inputs {
     border-top: none;
     border-left: none;
@@ -6,6 +19,7 @@
     margin-top: 5%;
     width: 100%;
     height: 8vh;
+    background: none;
 }
 
 .inputs:focus {
@@ -15,16 +29,16 @@
 }
 
 .contenedorDemanda {
-    position: relative;
-    height: 100%;
-    width: 50%;
-    margin-left: 15%;
-    float: left;
+    height: 90%;
+    width: 40%;
+    margin: 2% auto auto 10%;
     -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
-    margin-bottom: 5%
+    background-color: white;
+    opacity: 0.9;
+
     
 }
 
@@ -42,26 +56,22 @@
     color: white;
     font-size: 50px
 }
-.logoDemanda:hover{
-    rotate: 6;
-}
+
 .contenedorInputs {
     height: 50%;
-    width: 80%;
-    margin-left: 16%
+    width: 60%;
+    margin-left: 16%;
+    padding: 10px;
 }
 
 .inputsDemanda {
-    position: relative;
     height: 80%;
     width: 20%;
     margin-left: 2%;
-    float: left;
     padding-left: 180px;
 }
 
 .informacion {
-    float: left;
     padding: 2%;
     height: 440px;
     width: 300px;
@@ -73,7 +83,6 @@
 }
 
 .iconoInput{
-    position: relative; 
     color: #395E66;
     margin: -40px 10px auto -35px; 
     float: left; 
@@ -86,3 +95,54 @@
     margin-top: 3%;
 
 }
+
+
+  .form-wrapper {
+    max-width: 30%;
+    min-width: 300px;
+    padding: 50px 30px 50px 30px;
+    margin: 50px auto;   
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+    cursor: auto;
+  }
+  
+  .form-group {
+    position:relative;  
+    /* border: 2px solid green;
+    border-radius: 5px; */
+  }
+  
+  .form-label {
+    cursor: auto;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #999;
+    background-color: #fff;
+    z-index: 10;
+    transition: transform 200ms ease-out, font-size 200ms ease-out;
+  }
+  
+  .focused .form-label {
+    transform: translateY(-125%);
+    font-size: 15px;
+  }
+  
+  .form-input {
+    position: relative;
+    padding: 12px 0px 5px 0;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    transition: box-shadow 200ms ease-out;
+  }
+.form-input:focus {
+      box-shadow: 0 2px 0 0 #32936F;
+    }
+  
+  .form-input.filled {
+    box-shadow: 0 2px 0 0 #32936F;
+  }

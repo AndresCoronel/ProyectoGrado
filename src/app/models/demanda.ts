@@ -8,5 +8,5 @@ export class Demanda {
     departamento_demanda: string;
     ciudad_demanda: string;
     descripcion_demanda: string;
-    cedula_consumidor: number;
+    consumidor: number;
 }

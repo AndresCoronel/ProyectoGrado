@@ -3,12 +3,14 @@ import { Demanda } from '../../models/demanda';
 import { Router, ActivatedRoute } from "@angular/router";
 import { DemandaService } from '../../services/demanda/demanda.service';
 import swal from 'sweetalert2'
+import $ from 'jquery'
 @Component({
   selector: 'app-demanda',
   templateUrl: './demanda.component.html',
   styleUrls: ['./demanda.component.css']
 })
 export class DemandaComponent implements OnInit {
+  
   demandas: Demanda[];
   private demanda: Demanda = new Demanda();
   constructor(private demandaService: DemandaService,
@@ -16,8 +18,22 @@ export class DemandaComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    $('input').focus(function(){
+      $(this).parents('.form-group').addClass('focused');
+    });
+    
+    $('input').blur(function(){
+      var inputValue = $(this).val();
+      if ( inputValue == "" ) {
+        $(this).removeClass('filled');
+        $(this).parents('.form-group').removeClass('focused');  
+      } else {
+        $(this).addClass('filled');
+      }
+    })  
+    
   }
-
+  
   cargarDemanda(): void {
     
     this.activatedRoute.params.subscribe(params => {
