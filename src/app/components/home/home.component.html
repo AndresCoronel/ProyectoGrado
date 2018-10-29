@@ -95,11 +95,13 @@
       </div>
 
       <div class="contenedorSecundario">
+
+<!-- TODAS HABILITADAS -->
         <div class="panelProductosOfertados" *ngIf="habilitarTodas == true">
           <div class="card text-white productos" *ngFor=" let oferta of ofertas">
-            <img class="card-img u" src="http://www.elmundo.com/assets/uploads/files/5c786-agro.jpg" alt="Card image cap">
+            <img class="card-img u" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Card image cap">
             <div class="card-img-overlay">
-              <h5 class="card-title" style="margin-top: 35%;">{{oferta.nombre_producto}}</h5>
+              <h5 class="card-title" style="margin-top: 60%;text-shadow: 5px 5px 5px BLACK;">{{oferta.nombre_producto}}</h5>
               <p class="card-text">{{oferta.descripcion_producto}}</p>
             </div>
             <div class="btnVerMas" style="position: relative; margin-top:-1%;padding: 10px; width: 100%;text-align: right; border-radius: 0px 0px 7px 7px; height: 15%; background-color: #32936F">
@@ -119,7 +121,7 @@
               <p class="card-text">{{oferta.descripcion_producto}}</p>
             </div>
             <div class="btnVerMas" style="position: relative; margin-top:-1%;padding: 10px; width: 100%;text-align: right; border-radius: 0px 0px 7px 7px; height: 15%; background-color: #32936F">
-              <a style="padding: 10px; cursor: pointer" [routerLink]="['/oferta', oferta.id_oferta]">Ver mas
+              <a style="padding: 10px; cursor: pointer; color: white" [routerLink]="['/oferta', oferta.id_oferta]">Ver mas
                 <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
               </a>
             </div>
@@ -203,6 +205,7 @@
 
       </div>
       <hr>
+      
       <div class="container">
         <h1 style="margin-bottom: 30px; margin-left: 35%">TESTIMONIOS</h1>
       </div>
