@@ -4,6 +4,9 @@ export class Demanda {
     id_demanda: number;
     nombre_producto: string;
     cantidad_producto: number;
-    ubicacion_producto: string;
-    cedula_consumidor: Consumidor;
+    medida_producto: string;
+    departamento_demanda: string;
+    ciudad_demanda: string;
+    descripcion_demanda: string;
+    consumidor: number;
 }

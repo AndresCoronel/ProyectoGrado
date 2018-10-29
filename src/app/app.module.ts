@@ -24,10 +24,11 @@ import { BarraNavegacionComponent } from './components/barra-navegacion/barra-na
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
+  { path: 'principal', component: PaginaPrincipalComponent },
   { path: '', component: HomeComponent },
   { path: 'registro', component: RegistroConsumidorComponent },
   { path: 'inicioSesion', component: LoginComponent },
-  { path: 'oferta', component: OfertaComponent },
+  { path: 'oferta/:id_oferta', component: OfertaComponent },
   { path: 'demanda', component: DemandaComponent },
   { path: 'registro/form', component: FormComponent },
   { path: 'registro/form/:cedula_consumidor', component: FormComponent }

@@ -1,6 +1,11 @@
+.generalHome{
+    height: 100%;
+    margin: 0px
+}
 .content {
     width: 100%;
     height: 100%;
+    margin: 0px
 }
 
 .galeriaInicio {
@@ -54,7 +59,6 @@
     font: bolder;
     padding: 20px;
     padding-right: 50px;
-    
     -webkit-box-shadow: 13px 12px 57px 19px rgba(0, 0, 0, 0.74);
     -moz-box-shadow: 13px 12px 57px 19px rgba(0, 0, 0, 0.74);
     box-shadow: 13px 12px 57px 19px rgba(0, 0, 0, 0.74);
@@ -92,15 +96,9 @@ hr {
     font-size: 18px;
 }
 
-.imagenFraseInicio {
-    float: left;
-    width: 300px;
-    height: 200px;
-}
-
 .contenedorFraseInicio {
     width: 90%;
-    height: 30vh;
+    height: 100%;
     padding: 1%;
     margin: 1% 5% auto 5%;
 }
@@ -123,13 +121,11 @@ hr {
 }
 
 .panelFiltros {
-    float: left;
     width: 25.3%;
     height: 500px;
 }
 
 .panelProductosOfertados {
-    display: inline-block;
     width: 100%;
     height: 800px;
 }
@@ -137,7 +133,6 @@ hr {
 .u {
     width: 100%;
     height: 86%;
-    display: inline-block;
     border-radius: 10px 10px 0 0;
 }
 
@@ -197,3 +192,28 @@ hr {
     border: 1px solid #E0E0E0;
     border-radius: 10px;
 }
+
+.barraFiltro {
+    width: 30%;
+    height: 5vh;
+    border-radius: 20px;
+    background: none;
+    border: 3px solid #32936F;
+    color: black;
+    font-size: 20px;
+    font: bolder;
+    padding: 20px;
+    padding-right: 50px;
+    
+}
+.barraFiltro:focus{
+    outline: 0px;
+}
+
+::placeholder{
+    color: black;}
+
+    .clasecss{
+        background-color: #ff8800;
+        font-weight: bold;
+     }

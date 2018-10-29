@@ -1,19 +1,17 @@
 <div class="perfilGeneral">
-  <div class="perfil">
+  <div class="perfil" *ngFor="let consumidor of consumidores">
     <div class="imagenPerfil">
       <img src="https://www.fundacionquerer.org/elcole/wp-content/uploads/2018/08/empresarios.png" alt="men" style="width: 100%; height:100%; border-radius: 50%">
     </div>
     <hr />
     <div class="nombrePerfil">
-
-      <p style="text-align:inherit ">Entidad: Comeme esta</p>
+      <p style="text-align:inherit ">{{consumidor.nombre_consumidor}} {{consumidor.apellido_consumidor}}</p>
     </div>
     <hr />
     <div class="informacionPerfil">
-      <p>Nombre: Consumidor Nombre</p>
-      <p>Telefono: 3202803001</p>
-      <p>Ciudad: Bucaramanga</p>
-      <p>Dirección: Calle 46 # 23-81</p>
+      <p>Correo: {{consumidor.correo_consumidor}}</p>
+      <p>Telefono: {{consumidor.telefono_consumidor}}</p>
+      <p>Usuario: {{consumidor.usuario_consumidor}}</p>
     </div>
     <hr />
     <div class="modificarPerfil">
@@ -28,14 +26,14 @@
         <mat-tab label="Mis Demandas">
           <div class="contenido">
             <mat-list style="width: 100%; ">
-              <mat-list-item *ngFor="let folder of demandas">
+              <mat-list-item *ngFor="let demanda of demandass">
                 <div class="imagenLista">
                   <img mat-line src="https://www.fundacionquerer.org/elcole/wp-content/uploads/2018/08/empresarios.png"
                     style="width: 70px; height: 70px; border-radius: 50%">
                 </div>
                 <div class="infoLista">
-                  <h4 mat-line>{{folder.name}}</h4>
-                  <p mat-line>Publicado: {{folder.updated | date}} </p>
+                  <h4 mat-line>{{demanda.nombre_producto}}</h4>
+                  <p mat-line>Cantidad: {{demanda.cantidad_producto}} {{demanda.medida_producto}} </p>
                   <hr mat-line />
                 </div>
               </mat-list-item>

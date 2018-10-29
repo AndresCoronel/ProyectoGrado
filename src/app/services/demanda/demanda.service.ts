@@ -18,6 +18,7 @@ export class DemandaService {
   }
 
   crearDemanda(demanda: Demanda) : Observable<Demanda>{
+    console.log(demanda);
     return this.http.post<Demanda>(this.urlEndPoint, demanda, {headers: this.httpHeaders});
   }
 

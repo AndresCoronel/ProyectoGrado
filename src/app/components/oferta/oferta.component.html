@@ -6,12 +6,11 @@
       <div class="informacion">
         <h2 style="text-align: center; width: 100%; border-bottom: 2px solid #32936F; padding-bottom: 3%">Informaci&oacute;n
           producto</h2>
-        <ul style="margin-top: 17%">
-          <li>
-            Etiam nec odio eu risus tempus rutrum. Donec posuere purus a suscipit laoreet. Integer in augue et est
-            faucibus sagittis.
-            Vivamus eu leo a mi faucibus tempor. Fusce convallis enim eget dapibus consequat.
-          </li>
+        <ul style="font-size: 18px">
+          <h3>Nombre: {{oferta.nombre_producto}}</h3>
+          <h3>Cantidad: {{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</h3>
+          <h3>Variedad: {{oferta.variedad_producto}} </h3>
+          <h3>Precio: {{oferta.precio_producto}}</h3>
         </ul>
       </div>
       <div class="informacion">
@@ -36,25 +35,15 @@
     <div class="col-sm-6">
       <div class="informacion">
         <h2 style="text-align: center; width: 100%; border-bottom: 2px solid #32936F; padding-bottom: 3%">Ubicaci&oacute;n</h2>
-        <ul style="margin-top: 17%">
-          <li>
-            Etiam nec odio eu risus tempus rutrum. Donec posuere purus a suscipit laoreet. Integer in augue et est
-            faucibus sagittis.
-            Vivamus eu leo a mi faucibus tempor. Fusce convallis enim eget dapibus consequat.
-          </li>
+        <ul>
+        <h1>Ubicación: {{oferta.ubicacion_oferta}}, {{oferta.lugar_oferta}} </h1>
         </ul>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="informacion">
-        <h2 style="text-align: center; width: 100%; border-bottom: 2px solid #32936F; padding-bottom: 3%">Ubicaci&oacute;n</h2>
-        <ul style="margin-top: 17%">
-          <li>
-            Etiam nec odio eu risus tempus rutrum. Donec posuere purus a suscipit laoreet. Integer in augue et est
-            faucibus sagittis.
-            Vivamus eu leo a mi faucibus tempor. Fusce convallis enim eget dapibus consequat.
-          </li>
-        </ul>
+        <h2 style="text-align: center; width: 100%; border-bottom: 2px solid #32936F; padding-bottom: 3%">Descripción</h2>
+          <p>{{oferta.descripcion_producto}}</p>  
       </div>
     </div>
 
@@ -67,3 +56,5 @@
   </div>
 
 </div>
+
+  

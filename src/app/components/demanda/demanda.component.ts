@@ -16,6 +16,7 @@ export interface Medida {
   styleUrls: ['./demanda.component.css'],
 })
 export class DemandaComponent implements OnInit {
+  
   demandas: Demanda[];
   private demanda: Demanda = new Demanda();
   firstFormGroup: FormGroup;
@@ -49,8 +50,9 @@ export class DemandaComponent implements OnInit {
       direccionCtrl:['', Validators.required]
     });
   }
-
+  
   cargarDemanda(): void {
+    
     this.activatedRoute.params.subscribe(params => {
       let id_demanda = params['id_demanda'];
       if (id_demanda) {

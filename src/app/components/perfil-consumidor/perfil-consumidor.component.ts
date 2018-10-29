@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
+import { DemandaService } from '../../services/demanda/demanda.service';
+import { Demanda } from '../../models/demanda';
+import { ConsumidorService } from '../../services/consumidor/consumidor.service';
+import { Consumidor } from '../../models/consumidor';
 
 export interface Demandas {
   name: string;
@@ -15,8 +20,10 @@ export interface Ofertas {
   styleUrls: ['./perfil-consumidor.component.css']
 })
 export class PerfilConsumidorComponent implements OnInit {
-
-
+  consumidores: Consumidor[];
+  private consumidor: Consumidor = new Consumidor();
+  demandass: Demanda[];
+  private demanda: Demanda = new Demanda();
   demandas: Demandas[] = [
     {
       name: 'Demanda 1',
@@ -113,8 +120,36 @@ export class PerfilConsumidorComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private demandaService: DemandaService, private router: Router,
+    private activatedRoute: ActivatedRoute, private consumidorService: ConsumidorService) { }
   ngOnInit() {
+    
+    this.consumidorService.getConsumidores().subscribe(
+      (consumidores) => { this.consumidores = consumidores }
+    );
+    this.demandaService.getDemandas().subscribe(
+      (demandass) => { this.demandass = demandass }
+    );
+  }
+
+  cargarConsumidor(): void {
+    this.activatedRoute.params.subscribe(params => {
+      let cedula_consumidor = params['cedula_consumidor']
+        if(cedula_consumidor){
+          this.consumidorService.getConsumidor(cedula_consumidor)
+          .subscribe( (consumidor) => this.consumidor = consumidor)
+        }
+      })
+  }
+
+  cargarDemandas(): void {
+    this.activatedRoute.params.subscribe(params => {
+      let id_demanda = params['id_demanda']
+        if(id_demanda){
+          this.demandaService.getDemanda(id_demanda)
+          .subscribe( (demanda) => this.demanda = demanda)
+        }
+      })
   }
 
 }
