@@ -1,98 +1,89 @@
-<div class="todo" style="position: absolute;">
 
-  <!-- <div style="margin-bottom: 50px; margin-top:20%; margin-left: 70%; float: left;">
-    <h1>Publica tu demanda</h1>
-  </div> -->
-
-  <div class="contenedorDemanda" style="padding-top: 15px">
-    
-   
-
-
-    <!-- <div class="logoDemanda">
-      <i class="fa fa-users" aria-hidden="true"></i>
-    </div> -->
-    <h2 style="padding: 20px; border: 2px solid #32936F; text-align: center; margin: 10px;">PUBLICA TU OFERTA</h2>
-    <div class="contenedorInputs">
-        <form action="" class="form">
-          <div class="form-group">
-            <label class="form-label" for="first" >Nombre del producto</label>
-            <input id="first" class="form-input" type="text" [(ngModel)]="demanda.nombre_producto" name="nombre_producto"/>
-          </div>
-          <div class="col-sm-8">
-              <input n placeholder="Cedula" class="inputs col-sm-12" [(ngModel)]="demanda.consumidor" name="consumidor">
-              <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
-            </div>
-          <div class="form-group">
-            <label class="form-label" for="last">Cantidad del producto</label>
-            <input id="last" class="form-input" type="text" [(ngModel)]="demanda.cantidad_producto" name="cantidad_producto"/>
-          </div>
-          
-
-          <div class="separador col-sm-8" style="margin-top: 5%">
-              <h3 style="font-size: 18px">Unidad de medida:</h3>
-              <select style="width: 100%" [(ngModel)]="demanda.medida_producto" name="medida_producto">
-                <option value="">seleccione...</option>
-                <option value="KG">KG</option>
-                <option value="ARROBA">ARROBA</option>
-                <option value="BULTO">BULTO</option>
-                <option value="audi">Audi</option>
-              </select>
-            </div>
-    
-            <!-- <div class="col-sm-6 separador">
-              <input placeholder="Precio de producto" type="number" class="inputs">
-              <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
-            </div> -->
-    
-            <div class="separador col-sm-6" style="margin-top: 5%">
-              <h3 style="font-size: 18px">Departamento:</h3>
-              <select style="width: 100%" [(ngModel)]="demanda.departamento_demanda" name="departamento_demanda">
-                <option value="">Departamento</option>
-                <option value="SANTANDER">SANTANDER</option>
-                <option value="CUNDINAMARCA">CUNDINAMARCA</option>
-                <option value="NORTE DE SANTANDER">NORTE DE SANTANDER</option>
-                <option value="ARAUCA">ARAUCA</option>
-              </select>
-            </div>
-    
-            <div class="separador col-sm-6" style="margin-top: 5%">
-              <h3 style="font-size: 18px">Ciudad:</h3>
-              <select style="width: 100%" [(ngModel)]="demanda.ciudad_demanda" name="ciudad_demanda">
-                <option value="">Seleccione...</option>
-                <option value="CUCUTA">CUCUTA</option>
-                <option value="MANIZALES">MANIZALES</option>
-                <option value="MEDELLIN">MEDELLIN</option>
-                <option value="BOGOTA">BOGOTA</option>
-              </select>
-            </div>
-            <div class="col-sm-12 separador">
-              <h3 style="font-size: 18px">Descripción de la demanda:</h3>
-              <textarea placeholder="Descripción de la demanda" style="width: 100%; height: 10vh;" [(ngModel)]="demanda.descripcion_demanda"
-                name="descripcion_demanda"></textarea>
-            </div>
-
-        </form>
-      </div>
-
-    <div class="contenedorInputs">
-      <div style="width: 100%;" class="row">
-       
-
-
-        <button type="button" style="margin: 5% auto auto 38%; font-size: 20px; background-color: #32936F" (click)='crearDemanda()'
-          class="btn btn-success">Publicar</button>
-      </div>
-
-    </div>
+<div class="general">
+  <div class="relleno">
+  <div style="margin-top:5px; text-align: center">
+    <h1>Publica Tu Demanda</h1>
   </div>
-  <!-- <div class="informacion">
-    <h2 style="text-align: center; width: 100%; border-bottom: 2px solid #32936F; padding-bottom: 3%">Sube tus fotos</h2>
-    <ul style="margin-top: 17%">
-      <li>
-        Etiam nec odio eu risus tempus rutrum. Donec posuere purus a suscipit laoreet. Integer in augue et est faucibus sagittis.
-        Vivamus eu leo a mi faucibus tempor. Fusce convallis enim eget dapibus consequat.
-      </li>
-    </ul>
-  </div> -->
+ <div class="logoContainer">
+   <div class="logoDemanda">
+   <i class="fa fa-users" aria-hidden="true"></i>
+ </div>
+</div>
+    <!--Step-->
+    <div class="steper">
+        <mat-horizontal-stepper linear #stepper class="headerStep">
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Producto Requerido">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Nombre Del Producto</ng-template>
+                <div class="paso">
+                <mat-form-field class="nombreProducto">
+                  <input matInput placeholder="Nombre del Producto" formControlName="firstCtrl" required>
+                </mat-form-field>
+                </div>
+                <div>
+                  <button mat-button matStepperNext class="siguiente">Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" errorMessage="Cantidad De Producto">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Cantidad De Producto</ng-template>
+                <div class="paso">
+                <mat-form-field class="cantidad">
+                  <input matInput  type="number" placeholder="Cantidad" formControlName="secondCtrl" required >
+                </mat-form-field>
+                <mat-form-field class="tipoCantidad">
+                    <mat-select placeholder="Medida" formControlName="medidaControl" required>
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let medida of medidas" [value]="medida.value">
+                        {{medida.tipoMedida}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious class="regresar">Regresar</button>
+                  <button mat-button matStepperNext class="siguiente">Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Dirección</ng-template>
+              <div class="paso">
+                  <mat-form-field class="departamento">
+                    <input matInput placeholder="Departamento" formControlName="departamentoCtrl" required  >
+                  </mat-form-field>
+                  <mat-form-field class="ciudad">
+                    <input matInput placeholder="Ciudad" formControlName="ciudadCtrl" required  >
+                  </mat-form-field>
+                  <mat-form-field class="direccion">
+                      <input matInput placeholder="Dirección" formControlName="direccionCtrl" required  >
+                    </mat-form-field>
+                  </div>
+              <div>
+                <button mat-button matStepperPrevious class="regresar">Regresar</button>
+                <button mat-button matStepperNext class="siguiente">Siguiente</button>
+              </div>
+            </form>
+            </mat-step>
+            <mat-step>
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Observaciones</ng-template>
+                    <div class="paso">
+                    <mat-form-field hintLabel="Máximo 200 caracteres" class="observaciones">
+                        <textarea matInput #input maxlength="200" placeholder="Aquí puede escribir observaciones o comentarios que desee para informar a los productores
+                        sobre lo que necesita" ></textarea>
+                        <mat-hint >{{input.value?.length || 0}}/200</mat-hint>
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <button mat-button matStepperPrevious class="regresar">Regresar</button>
+                      <button mat-button matStepperNext class="siguiente">Guardar</button>
+                    </div>
+                  </form>
+            </mat-step>
+          </mat-horizontal-stepper>
+  </div>
+</div>
 </div>
