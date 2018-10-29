@@ -3,22 +3,51 @@ import { Demanda } from '../../models/demanda';
 import { Router, ActivatedRoute } from "@angular/router";
 import { DemandaService } from '../../services/demanda/demanda.service';
 import swal from 'sweetalert2'
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+
+export interface Medida {
+  value: string;
+  tipoMedida: string;
+}
+
 @Component({
   selector: 'app-demanda',
   templateUrl: './demanda.component.html',
-  styleUrls: ['./demanda.component.css']
+  styleUrls: ['./demanda.component.css'],
 })
 export class DemandaComponent implements OnInit {
   demandas: Demanda[];
   private demanda: Demanda = new Demanda();
-  constructor(private demandaService: DemandaService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  medidas: Medida[] = [
+    { value: 'Kilogramo-0', tipoMedida: 'Kilogramo' },
+    { value: 'Bulto-1', tipoMedida: 'Bulto' },
+    { value: 'Arroba-2', tipoMedida: 'Arroba' },
+    { value: 'Canastilla-3', tipoMedida: 'Canastilla' },
+    { value: 'Tonelada-4', tipoMedida: 'Tonelada' },
+  ];
+  constructor(private demandaService: DemandaService, private router: Router,
+    private activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.demandaService.getDemandas().subscribe((demandas)=>{
-      this.demandas=demandas
-    })
+    this.demandaService.getDemandas().subscribe((demandas) => {
+      this.demandas = demandas
+    });
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+      medidaControl:['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      departamentoCtrl: ['', Validators.required],
+      ciudadCtrl:['', Validators.required],
+      direccionCtrl:['', Validators.required]
+    });
   }
 
   cargarDemanda(): void {
@@ -33,26 +62,26 @@ export class DemandaComponent implements OnInit {
 
   crearDemanda(): void {
     this.demandaService.crearDemanda(this.demanda)
-    .subscribe(demanda =>{
-      this.router.navigate(['/demanda'])
-      swal("Demanda publicada", `${demanda.nombre_producto} Publicada con éxito`, "success");
+      .subscribe(demanda => {
+        this.router.navigate(['/demanda'])
+        swal("Demanda publicada", `${demanda.nombre_producto} Publicada con éxito`, "success");
         this.demanda = new Demanda();
-    })
+      })
   }
 
   ActualizarDemanda(): void {
     this.demandaService.updateDemanda(this.demanda)
-    .subscribe( demanda =>{
-      this.router.navigate(['/registro'])
-      swal("Actualización exitosa", `${demanda.nombre_producto} fue actualizado`, "success");
-    })
+      .subscribe(demanda => {
+        this.router.navigate(['/registro'])
+        swal("Actualización exitosa", `${demanda.nombre_producto} fue actualizado`, "success");
+      })
   }
 
 
-  eliminarDemanda(demanda: Demanda){
+  eliminarDemanda(demanda: Demanda) {
     swal({
       title: '¿Está seguro?',
-      text:`Seguro que quiere eliminar a ${demanda.nombre_producto}`,
+      text: `Seguro que quiere eliminar a ${demanda.nombre_producto}`,
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: 'red',
@@ -61,14 +90,14 @@ export class DemandaComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.demandaService.deleteDemanda(demanda.id_demanda)
-        .subscribe( response =>{
-          this.demandas = this.demandas.filter(con => con !== demanda);
-        swal(
-          'Usuario eliminado',
-          `${demanda.nombre_producto} eliminado con éxito`,
-          'success'
-        )
-      })
+          .subscribe(response => {
+            this.demandas = this.demandas.filter(con => con !== demanda);
+            swal(
+              'Usuario eliminado',
+              `${demanda.nombre_producto} eliminado con éxito`,
+              'success'
+            )
+          })
       }
     })
 

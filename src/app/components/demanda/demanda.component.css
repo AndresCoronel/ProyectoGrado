@@ -1,3 +1,18 @@
+.general{
+    width: 100%; 
+    height: 100%; 
+    padding-top: 1%; 
+    background-image: url("http://elfinanciero.com.mx/uploads/2018/03/06/cc384c68ad1520399775_standard_desktop_fullhd.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    
+}
+
+.relleno{
+    height: 600px;
+}
 .inputs {
     border-top: none;
     border-left: none;
@@ -13,27 +28,17 @@
     transition-duration: 0.5s;
     outline: 0px;
 }
-
-.contenedorDemanda {
-    position: relative;
-    height: 100%;
-    width: 50%;
-    margin-left: 15%;
-    float: left;
-    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    margin-bottom: 5%
-    
+.logoContainer{
+    width: 100%;
+    height: 120px;
 }
-
 .logoDemanda {
     float: left;
     background-color: #395E66;
     width: 100px;
     height: 100px;
-    margin: -50px auto 0px 42%;
+    margin-left: 46%;
+    margin-top: 10px;
     border-radius: 18px 200px 200px 200px;
     -moz-border-radius: 18px 200px 200px 200px;
     -webkit-border-radius: 18px 200px 200px 200px;
@@ -45,44 +50,80 @@
 .logoDemanda:hover{
     rotate: 6;
 }
-.contenedorInputs {
-    height: 50%;
-    width: 80%;
-    margin-left: 16%
-}
-
-.inputsDemanda {
-    position: relative;
-    height: 80%;
-    width: 20%;
-    margin-left: 2%;
-    float: left;
-    padding-left: 180px;
-}
-
-.informacion {
-    float: left;
-    padding: 2%;
-    height: 440px;
-    width: 300px;
-    margin-left: 3%;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-}
-
-.iconoInput{
-    position: relative; 
-    color: #395E66;
-    margin: -40px 10px auto -35px; 
-    float: left; 
-    color:black; 
-    width:40; 
-    height:40;
-    font-size: 30px;
-}
-.separador{
-    margin-top: 3%;
-
-}
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .mat-select{
+      margin-left: 10px;
+  }
+  .tipoCantidad{
+      margin-top: 15px;
+      margin-left: 30px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .steper{
+      width: 70%;
+      height: 60%;
+      margin: auto;
+      margin-top: 20px;
+  }
+  .headerStep{
+      background-color: rgb(255, 255, 255, 0.9);
+      padding:20px;
+      height: 280px;
+      -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+  }
+  .regresar{
+      background-color: white;
+      margin-top: 10px;
+  }
+  .siguiente{
+      background-color: #32936F;
+      margin-left: 10px;
+      margin-top: 10px;
+  }
+  .paso{
+      width: 90%;
+      height: 100px;
+      margin-top: 10px;
+  }
+  .ciudad{
+      margin-top: 15px;
+      margin-left: 10px;
+      width: 32%;
+  }
+  .direccion{
+    margin-top: 15px;
+      margin-left: 10px;
+      width: 32%;
+  }
+  .departamento{
+    margin-top: 15px;
+    width: 32%;
+  }
+  .observaciones{
+      width: 90%;
+      margin: auto;
+      height: 50%;
+  }
+  .nombreProducto{
+      margin-top: 15px;
+      width: 40%;
+  }
+  
