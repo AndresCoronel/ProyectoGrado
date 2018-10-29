@@ -6,52 +6,48 @@
   <div class="contenedorDemanda">
     <div class="contenedorInputs">
       <div style="width: 100%;" class="row">
-        <form action="" class="form row">
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-            <label class="form-label" for="first">Nombre del producto</label>
-            <input id="first" class="form-input" type="text" [(ngModel)]="consumidor.cedula_consumidor" name="cedula_consumidor" />
-          </div>
+        <div class="col-sm-5 separador" style="margin-left: 10px;">
+          <input placeholder="Cedula" type="number" class="inputs"  [(ngModel)]="consumidor.cedula_consumidor" name="cedula_consumidor">
+          <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
+        </div>
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-            <label class="form-label" for="second">Nombres</label>
-            <input id="second" class="form-input" type="text" [(ngModel)]="consumidor.nombre_consumidor" name="cedula_consumidor" />
-          </div>
+        <div class="col-sm-6 separador">
+          <input placeholder="Nombres" class="inputs col-sm-12" [(ngModel)]="consumidor.nombre_consumidor" name="nombre_consumidor">
+          <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
+        </div>
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-            <label class="form-label" for="third">Apellidos</label>
-            <input id="third" class="form-input" type="text" [(ngModel)]="consumidor.apellido_consumidor" name="apellido_consumidor"
-            />
-          </div>
+        <div class="col-sm-6 separador">
+          <input placeholder="Apellidos" type="text " class="inputs" [(ngModel)]="consumidor.apellido_consumidor" name="apellido_consumidor">
+          <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
+        </div>
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-            <label class="form-label" for="fourth">Correo electrónico</label>
-            <input id="fourth" class="form-input" type="text" [(ngModel)]="consumidor.correo_consumidor" name="correo_consumidor" />
-          </div>
-          <!-- <div class="col-sm-6 separador">
-              <input placeholder="Precio de producto" type="number" class="inputs">
-              <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
-            </div> -->
+        <!-- <div class="col-sm-6 separador">
+            <input placeholder="Precio de producto" type="number" class="inputs">
+            <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
+          </div> -->
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-            <label class="form-label" for="sixth">Teléfono</label>
-            <input type="number" id="sixth" class="form-input" [(ngModel)]="consumidor.telefono_consumidor" name="telefono_consumidor"/>
-          </div>
+        <div class="col-sm-6 separador">
+          <input placeholder="Correo electrónico" class="inputs" [(ngModel)]="consumidor.correo_consumidor" name="correo_consumidor">
+          <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
+        </div>
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-              <label class="form-label" for="sixth">Usuario</label>
-              <input type="number" id="sixth" class="form-input" [(ngModel)]="consumidor.usuario_consumidor" name="usuario_consumidor"/>
-          </div>
+        <div class="col-sm-5 separador" style="margin-left: 10px;">
+          <input placeholder="Telefono" type="number" class="inputs" [(ngModel)]="consumidor.telefono_consumidor" name="telefono_consumidor">
+          <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
+        </div>
 
-          <div class="form-group col-sm-6 separador" style="margin-left: 10px">
-              <label class="form-label" for="sixth">Contraseña</label>
-              <input type="number" id="sixth" class="form-input" [(ngModel)]="consumidor.contrasenia_consumidor" name="contrasenia_consumidor"/>
-          </div>
+        <div class="col-sm-6 separador">
+          <input placeholder="Usuario" class="inputs" [(ngModel)]="consumidor.usuario_consumidor" name="usuario_consumidor">
+          <i class="fa fa-user-circle iconoInput" style="color: #395E66"></i>
+        </div>
 
-          <button type="button" style="margin: 5% auto auto 38%; font-size: 20px; background-color: #32936F" role="button" (click)='crearConsumidor()'
-            class="btn btn-success">Registrarme</button>
-        </form>
+        <div class="col-sm-5 separador" style="margin-left: 10px;">
+          <input placeholder="Contraseña" type="datetime" class="inputs" [(ngModel)]="consumidor.contrasenia_consumidor" name="contrasenia_consumidor"> 
+          <i class="fa fa-key iconoInput" style="color: #395E66" aria-hidden="true"></i>
+        </div>
 
+        <button type="button" style="margin: 5% auto auto 38%; font-size: 20px; background-color: #32936F" role="button" (click)='crearConsumidor()' class="btn btn-success">Registrarme</button>
       </div>
 
     </div>
@@ -68,53 +64,53 @@
 </div>
 
 <div class="container" style="margin-top: 10%">
-  <button type="button" (click)="setHabilitar()" class="btn btn-primary my-3">{{habilitar == true? 'Ocultar': 'Mostrar'}}</button>
-
-  <div class="card border-primary mb-3">
-    <div class="card-header">Consumidores</div>
-    <div class="card-body text-primary">
-      <h5 class="card-title">Listado de Consumidores</h5>
-
-      <div class="my-2 text-left">
-        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/registro/form']">Crear Consumidores</button>
+    <button type="button" (click)="setHabilitar()" class="btn btn-primary my-3">{{habilitar == true? 'Ocultar': 'Mostrar'}}</button>
+  
+    <div class="card border-primary mb-3">
+      <div class="card-header">Consumidores</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">Listado de Consumidores</h5>
+  
+        <div class="my-2 text-left">
+          <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/registro/form']">Crear Consumidores</button>
+        </div>
+  
+        <table class="table table-bordered table-striped" *ngIf="habilitar == true">
+          <thead>
+            <tr>
+              <th>cedula</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+              <th>Usuario</th>
+              <th>Contraseña</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let consumidor of consumidores">
+              <td>{{consumidor.cedula_consumidor}}</td>
+              <td>{{consumidor.nombre_consumidor}}</td>
+              <td>{{consumidor.apellido_consumidor}}</td>
+              <td>{{consumidor.telefono_consumidor}}</td>
+              <td>{{consumidor.correo_consumidor}}</td>
+              <td>{{consumidor.usuario_consumidor}}</td>
+              <td>{{consumidor.contrasenia_consumidor}}</td>
+              <td>
+                <button type="button" name="editar" [routerLink]="['/registro/form',consumidor.cedula_consumidor]" class="btn btn-primary">Editar</button>
+              </td>
+              <td>
+                <button type="button" name="eliminar" (click)="eliminarConsumidor(consumidor)" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <table class="table table-bordered table-striped" *ngIf="habilitar == true">
-        <thead>
-          <tr>
-            <th>cedula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Usuario</th>
-            <th>Contraseña</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let consumidor of consumidores">
-            <td>{{consumidor.cedula_consumidor}}</td>
-            <td>{{consumidor.nombre_consumidor}}</td>
-            <td>{{consumidor.apellido_consumidor}}</td>
-            <td>{{consumidor.telefono_consumidor}}</td>
-            <td>{{consumidor.correo_consumidor}}</td>
-            <td>{{consumidor.usuario_consumidor}}</td>
-            <td>{{consumidor.contrasenia_consumidor}}</td>
-            <td>
-              <button type="button" name="editar" [routerLink]="['/registro/form',consumidor.cedula_consumidor]" class="btn btn-primary">Editar</button>
-            </td>
-            <td>
-              <button type="button" name="eliminar" (click)="eliminarConsumidor(consumidor)" class="btn btn-danger">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
+  
+  
+  
+  
   </div>
-
-
-
-
-</div>

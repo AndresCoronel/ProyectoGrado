@@ -3,8 +3,6 @@ import $ from 'jquery'
 import { OfertaService } from '../../services/oferta/oferta.service';
 import { Oferta } from '../../models/oferta';
 import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';
-import { ProductorService } from '../../services/productor.service';
-import { Productor } from '../../models/productor';
 @Component({
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
@@ -15,10 +13,7 @@ export class OfertaComponent implements OnInit {
 
   ofertas: Oferta[];
   private oferta: Oferta = new Oferta();
-  productores: Productor[];
-  private productor: Productor = new Productor();
-  
-  constructor(private productorService:ProductorService, private ofertaService: OfertaService, private router: Router,
+  constructor(private ofertaService: OfertaService, private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
