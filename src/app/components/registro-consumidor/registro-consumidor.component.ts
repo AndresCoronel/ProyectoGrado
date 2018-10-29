@@ -3,6 +3,7 @@ import { Consumidor } from '../../models/consumidor';
 import { ConsumidorService } from '../../services/consumidor/consumidor.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import swal from 'sweetalert2'
+import $ from 'jquery'
 @Component({
   selector: 'app-registro-consumidor',
   templateUrl: './registro-consumidor.component.html',
@@ -16,6 +17,21 @@ export class RegistroConsumidorComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    $('input').focus(function(){
+      $(this).parents('.form-group').addClass('focused');
+    });
+    
+    $('input').blur(function(){
+      var inputValue = $(this).val();
+      if ( inputValue == "" ) {
+        $(this).removeClass('filled');
+        $(this).parents('.form-group').removeClass('focused');  
+      } else {
+        $(this).addClass('filled');
+      }
+    })  
+
+
     this.cargarConsumidor();
     
     this.consumidorService.getConsumidores().subscribe(

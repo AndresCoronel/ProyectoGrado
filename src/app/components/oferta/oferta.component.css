@@ -1,21 +1,86 @@
-.titulo{
-    padding-bottom: 20px; 
-    margin: 7% 0px 5% 10%;  
-    border-bottom: 1px solid #395E66;
+
+.todo {
+    width: 100%;
+    position: absolute;
+    background-image: url("https://cdn-3.expansion.mx/dims4/default/65d1b89/2147483647/strip/true/crop/837x837+417+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2F18%2Fe9%2F41595b184efaa4375bd0fe5f2ff4%2Fistock-642438552.jpg");
+    /* The image used */
+    background-color: #cccccc;
+    /* Used if the image is unavailable */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    /* Resize the background image to cover the entire container */
+    height: auto;
+    background-size: 100% 100%;
 }
 
+.titulo {
+    padding-bottom: 20px;
+    margin: 3% 0px 5% 10%;
+    border-bottom: 3px solid #395E66;
+    font-family: 'Lobster', cursive;
+    font-size: 70px;
+}
+
+.encabezados {
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid #32936F;
+    padding-bottom: 3%;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitulos h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.datos h2 {
+    font-size: 20px;
+    font-family: 'Gabriela', serif;
+    margin-top: 9px
+}
 
 .informacion {
     padding: 2%;
     margin: 0% 0% 5% 10%;
     height: auto;
     border-radius: 5px;
-    -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    /* -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75); */
     background-color: white;
     opacity: 0.8;
 }
-.imagen{
-    margin: 11.5% 0px 5% 0%;  
+
+.imagen {
+    margin-top: 20%;
+    border-radius: 20px;
+    height: auto;
+}
+
+.botonMensaje {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #32936F;
+    color: #395E66;
+    font-size: 20px;
+    font-family: 'Gabriela', serif;
+    cursor: pointer;
+    background-color: white;
+    margin-left: 55%;
+}
+
+.botonMensaje:hover {
+    -webkit-box-shadow: 7px 9px 14px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 9px 14px -8px rgba(0,0,0,0.75);
+box-shadow: 7px 9px 14px -8px rgba(0,0,0,0.75);
+}
+
+.botonMensaje:focus {
+    outline: 0;
 }

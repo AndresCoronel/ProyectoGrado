@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   habilitarFecha: boolean= false;
   habilitarCantidad: boolean= false;
   habilitarPrecio: boolean= false;
-
+  h: string = "./../../../assets/img/PAPA.jpg"
 
   ofertas: Oferta[];
   private oferta: Oferta = new Oferta();
@@ -24,6 +24,27 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    var carousel = $(".carousel"),
+      currdeg = 0;
+
+    $(".next").on("click", { d: "n" }, rotate);
+    $(".prev").on("click", { d: "p" }, rotate);
+
+    function rotate(e) {
+      if (e.data.d == "n") {
+        currdeg = currdeg - 60;
+      }
+      if (e.data.d == "p") {
+        currdeg = currdeg + 60;
+      }
+      carousel.css({
+        "-webkit-transform": "rotateY(" + currdeg + "deg)",
+        "-moz-transform": "rotateY(" + currdeg + "deg)",
+        "-o-transform": "rotateY(" + currdeg + "deg)",
+        "transform": "rotateY(" + currdeg + "deg)"
+      });
+    }
+    
     this.cargarOferta();
 
    this.ofertaService.getOfertas().subscribe(
