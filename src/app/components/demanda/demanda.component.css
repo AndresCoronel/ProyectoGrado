@@ -1,13 +1,17 @@
-
-.todo {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-   /* background-image: url("https://www.cornandsoybeandigest.com/sites/cornandsoybeandigest.com/files/3.09%20soybeans-july1.jpg"); /* The image used */ /* Used if the image is unavailable */
-    background-position: bottom; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+.general{
+    width: 100%; 
+    height: 100%; 
+    padding-top: 1%; 
+    background-image: url("http://elfinanciero.com.mx/uploads/2018/03/06/cc384c68ad1520399775_standard_desktop_fullhd.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
     
+}
+
+.relleno{
+    height: 600px;
 }
 .inputs {
     border-top: none;
@@ -25,27 +29,17 @@
     transition-duration: 0.5s;
     outline: 0px;
 }
-
-.contenedorDemanda {
-    height: 700px;
-    width: 50%;
-    margin: 1% auto 5% 10%;
-    -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    background-color: white;
-    opacity: 0.9;
-
-    
+.logoContainer{
+    width: 100%;
+    height: 120px;
 }
-
 .logoDemanda {
     float: left;
     background-color: #395E66;
     width: 100px;
     height: 100px;
-    margin: -50px auto 0px 42%;
+    margin-left: 46%;
+    margin-top: 10px;
     border-radius: 18px 200px 200px 200px;
     -moz-border-radius: 18px 200px 200px 200px;
     -webkit-border-radius: 18px 200px 200px 200px;
@@ -54,94 +48,83 @@
     color: white;
     font-size: 50px
 }
-
-.contenedorInputs {
-    height: 80%;
-    width: 80%;
-    margin-left: 10%;
+.logoDemanda:hover{
+    rotate: 6;
 }
-
-.inputsDemanda {
-    height: 80%;
-    width: 20%;
-    margin-left: 2%;
-    padding-left: 180px;
-}
-
-.informacion {
-    padding: 2%;
-    height: 440px;
-    width: 300px;
-    margin-left: 3%;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-}
-
-.iconoInput{
-    color: #395E66;
-    margin: -40px 10px auto -35px; 
-    float: left; 
-    color:black; 
-    width:40; 
-    height:40;
-    font-size: 30px;
-}
-.separador{
-    margin-top: 3%;
-
-}
-
-
-  .form-wrapper {
-    max-width: 30%;
-    min-width: 300px;
-    padding: 50px 30px 50px 30px; 
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
-    cursor: auto;
+.example-container {
+    display: flex;
+    flex-direction: column;
   }
   
-  .form-group {
-    display: inline-block;
-    position:relative;  
-    /* border: 2px solid green;
-    border-radius: 5px; */
-  }
-  
-  .form-label {
-    cursor: auto;
-    position: absolute;
-    left: 1;
-    top: 10px;
-    color: black;
-    background-color: #fff;
-    z-index: 10;
-    transition: transform 200ms ease-out, font-size 200ms ease-out;
-    font-size: 19px;
-  }
-  
-  .focused .form-label {
-    transform: translateY(-125%);
-    font-size: 17px;
-    color: #32936F
-  }
-  
-  .form-input {
-    position: relative;
-    padding: 12px 0px 5px 0;
+  .example-container > * {
     width: 100%;
-    outline: 0;
-    border: 0;
-    box-shadow: 0 1px 0 0 #e5e5e5;
-    transition: box-shadow 200ms ease-out;
   }
-.form-input:focus {
-      box-shadow: 0 2px 0 0 #32936F;
-    }
+  .mat-select{
+      margin-left: 10px;
+  }
+  .tipoCantidad{
+      margin-top: 15px;
+      margin-left: 30px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
   
-  .form-input.filled {
-    box-shadow: 0 2px 0 0 #32936F;
+  .example-full-width {
+    width: 100%;
   }
+  .steper{
+      width: 70%;
+      height: 60%;
+      margin: auto;
+      margin-top: 20px;
+  }
+  .headerStep{
+      background-color: rgb(255, 255, 255, 0.9);
+      padding:20px;
+      height: 280px;
+      -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+  }
+  .regresar{
+      background-color: white;
+      margin-top: 10px;
+  }
+  .siguiente{
+      background-color: #32936F;
+      margin-left: 10px;
+      margin-top: 10px;
+  }
+  .paso{
+      width: 90%;
+      height: 100px;
+      margin-top: 10px;
+  }
+  .ciudad{
+      margin-top: 15px;
+      margin-left: 10px;
+      width: 32%;
+  }
+  .direccion{
+    margin-top: 15px;
+      margin-left: 10px;
+      width: 32%;
+  }
+  .departamento{
+    margin-top: 15px;
+    width: 32%;
+  }
+  .observaciones{
+      width: 90%;
+      margin: auto;
+      height: 50%;
+  }
+  .nombreProducto{
+      margin-top: 15px;
+      width: 40%;
+  }
+  
