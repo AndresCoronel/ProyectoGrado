@@ -15,7 +15,7 @@ import { OfertaComponent } from './components/oferta/oferta.component';
 import { DemandaComponent } from './components/demanda/demanda.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PerfilConsumidorComponent } from './components/perfil-consumidor/perfil-consumidor.component';
-
+import {AgmCoreModule} from   '@agm/core';
 //Animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //Material
@@ -50,6 +50,9 @@ const appRoutes: Routes = [
   
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyADXoaV6DsrjRMBT1yfjNBPyy0KGG2tymc'
+    }),
     BrowserModule,
     HttpClientModule,
     FormsModule,

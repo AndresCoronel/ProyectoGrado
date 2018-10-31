@@ -65,7 +65,7 @@ export class DemandaComponent implements OnInit {
   crearDemanda(): void {
     this.demandaService.crearDemanda(this.demanda)
       .subscribe(demanda => {
-        this.router.navigate(['/demanda'])
+        this.router.navigate(['/'])
         swal("Demanda publicada", `${demanda.nombre_producto} Publicada con éxito`, "success");
         this.demanda = new Demanda();
       })

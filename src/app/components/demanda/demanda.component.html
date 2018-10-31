@@ -1,23 +1,27 @@
 
-<div class="general">
-  <div class="relleno">
-  <div style="margin-top:5px; text-align: center">
-    <h1>Publica Tu Demanda</h1>
-  </div>
- <div class="logoContainer">
+<div class="general" >
+  <div style="margin-top:6%;">
+
+ <!-- <div class="logoContainer">
    <div class="logoDemanda">
    <i class="fa fa-users" aria-hidden="true"></i>
  </div>
-</div>
+</div> -->
     <!--Step-->
+    
     <div class="steper">
-        <mat-horizontal-stepper linear #stepper class="headerStep">
+        <div style="margin-left:30%;width: 100%;text-align: center">
+            <h1 class="titulo">Publica Tu Demanda</h1>
+          </div>
+        <mat-horizontal-stepper linear #stepper class="headerStep" style="padding-top: 10%"> 
+
             <mat-step [stepControl]="firstFormGroup" errorMessage="Producto Requerido">
+               
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Nombre Del Producto</ng-template>
                 <div class="paso">
                 <mat-form-field class="nombreProducto">
-                  <input matInput placeholder="Nombre del Producto" formControlName="firstCtrl" required>
+                  <input matInput placeholder="Nombre del Producto" formControlName="firstCtrl" required [(ngModel)]="demanda.nombre_producto" name="nombre_producto">
                 </mat-form-field>
                 </div>
                 <div>
@@ -30,13 +34,13 @@
                 <ng-template matStepLabel>Cantidad De Producto</ng-template>
                 <div class="paso">
                 <mat-form-field class="cantidad">
-                  <input matInput  type="number" placeholder="Cantidad" formControlName="secondCtrl" required >
+                  <input matInput  type="number" placeholder="Cantidad" formControlName="secondCtrl" required [(ngModel)]="demanda.cantidad_producto" name="cantidad_producto">
                 </mat-form-field>
                 <mat-form-field class="tipoCantidad">
                     <mat-select placeholder="Medida" formControlName="medidaControl" required>
                       <mat-option>--</mat-option>
-                      <mat-option *ngFor="let medida of medidas" [value]="medida.value">
-                        {{medida.tipoMedida}}
+                      <mat-option *ngFor="let medida of medidas" [value]="medida.value" >
+                        {{medida.tipoMedida}} 
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -52,13 +56,13 @@
               <ng-template matStepLabel>Dirección</ng-template>
               <div class="paso">
                   <mat-form-field class="departamento">
-                    <input matInput placeholder="Departamento" formControlName="departamentoCtrl" required  >
+                    <input matInput placeholder="Departamento" formControlName="departamentoCtrl" required  [(ngModel)]="demanda.departamento_demanda" name="departamento_demanda">
                   </mat-form-field>
                   <mat-form-field class="ciudad">
-                    <input matInput placeholder="Ciudad" formControlName="ciudadCtrl" required  >
+                    <input matInput placeholder="Ciudad" formControlName="ciudadCtrl" required  [(ngModel)]="demanda.ciudad_demanda" name="ciudad_demanda">
                   </mat-form-field>
                   <mat-form-field class="direccion">
-                      <input matInput placeholder="Dirección" formControlName="direccionCtrl" required  >
+                      <input matInput placeholder="Dirección" formControlName="direccionCtrl" required [(ngModel)]="demanda.consumidor" name="consumidor" >
                     </mat-form-field>
                   </div>
               <div>
@@ -73,13 +77,13 @@
                     <div class="paso">
                     <mat-form-field hintLabel="Máximo 200 caracteres" class="observaciones">
                         <textarea matInput #input maxlength="200" placeholder="Aquí puede escribir observaciones o comentarios que desee para informar a los productores
-                        sobre lo que necesita" ></textarea>
+                        sobre lo que necesita" [(ngModel)]="demanda.descripcion_demanda" name="descripcion_demanda"></textarea>
                         <mat-hint >{{input.value?.length || 0}}/200</mat-hint>
                       </mat-form-field>
                     </div>
                     <div>
                       <button mat-button matStepperPrevious class="regresar">Regresar</button>
-                      <button mat-button matStepperNext class="siguiente">Guardar</button>
+                      <button mat-button matStepperNext class="siguiente" (click)="crearDemanda()">Guardar</button>
                     </div>
                   </form>
             </mat-step>

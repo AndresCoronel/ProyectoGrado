@@ -7,3 +7,8 @@ ng g service nombre
 ng g class nombre
 /*generar componente
 ng g c nombre
+
+
+/*instalar el google maps
+
+npm install — save @types/googlemaps

@@ -5,13 +5,25 @@
     background-image: url("http://elfinanciero.com.mx/uploads/2018/03/06/cc384c68ad1520399775_standard_desktop_fullhd.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-attachment: fixed;
+    position: absolute;
+     vertical-align: middle;
     
 }
-
-.relleno{
-    height: 600px;
+/* @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+    .general {
+      
+      background: yellow;
+    }
+  } */
+  .titulo {
+    padding-bottom: 20px;
+    margin: 2% 0px 0% 0%;
+    border-bottom: 3px solid #395E66;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    float: left;
 }
 .inputs {
     border-top: none;
@@ -84,7 +96,7 @@
   .headerStep{
       background-color: rgb(255, 255, 255, 0.9);
       padding:20px;
-      height: 280px;
+      height: auto;
       -webkit-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 30px -13px rgba(0, 0, 0, 0.75);
