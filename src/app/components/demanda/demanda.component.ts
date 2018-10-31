@@ -22,6 +22,7 @@ export class DemandaComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
   medidas: Medida[] = [
     { value: 'Kilogramo-0', tipoMedida: 'Kilogramo' },
     { value: 'Bulto-1', tipoMedida: 'Bulto' },
@@ -48,6 +49,9 @@ export class DemandaComponent implements OnInit {
       departamentoCtrl: ['', Validators.required],
       ciudadCtrl:['', Validators.required],
       direccionCtrl:['', Validators.required]
+    });
+    this.fourthFormGroup = this._formBuilder.group({
+      descripcionCtrl: ['', Validators.required]
     });
   }
   
