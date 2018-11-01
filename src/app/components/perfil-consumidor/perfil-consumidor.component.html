@@ -1,77 +1,111 @@
-<div class="perfilGeneral">
-  <div class="perfil" *ngFor="let consumidor of consumidores">
-    <div class="imagenPerfil">
-      <img src="https://www.fundacionquerer.org/elcole/wp-content/uploads/2018/08/empresarios.png" alt="men" style="width: 100%; height:100%; border-radius: 50%">
-    </div>
-    <hr />
-    <div class="nombrePerfil">
-      <p style="text-align:inherit ">{{consumidor.nombre_consumidor}} {{consumidor.apellido_consumidor}}</p>
-    </div>
-    <hr />
-    <div class="informacionPerfil">
-      <p>Correo: {{consumidor.correo_consumidor}}</p>
-      <p>Telefono: {{consumidor.telefono_consumidor}}</p>
-      <p>Usuario: {{consumidor.usuario_consumidor}}</p>
-    </div>
-    <hr />
-    <div class="modificarPerfil">
-      <button mat-raised-button style="background-color:#32936F; margin: auto">Modificar Perfil</button>
-    </div>
-  </div>
-  <div class="elementosPerfil">
-    <div class="campos">
-      <mat-tab-group>
+<div class="todo">
 
-        <!--MIS DEMANDAS-->
-        <mat-tab label="Mis Demandas">
-          <div class="contenido">
-            <mat-list style="width: 100%; ">
-              <mat-list-item *ngFor="let demanda of demandass">
-                <div class="imagenLista">
-                  <img mat-line src="https://www.fundacionquerer.org/elcole/wp-content/uploads/2018/08/empresarios.png"
-                    style="width: 70px; height: 70px; border-radius: 50%">
-                </div>
-                <div class="infoLista">
-                  <h4 mat-line>{{demanda.nombre_producto}}</h4>
-                  <p mat-line>Cantidad: {{demanda.cantidad_producto}} {{demanda.medida_producto}} </p>
-                  <hr mat-line />
-                </div>
-              </mat-list-item>
-            </mat-list>
+  <div class="row" style="margin: 2% 5% 0 10%;">
+   
+    <div class="perfil col-sm-3" *ngFor="let consumidor of consumidores">
+      
+      <div class="imagenPerfil">
+        <img src="http://www.emprendedores.es/var/em/storage/images/gestion/comprador_actual/1041741-3-esl-ES/radiografia_del_comprador_actual_el_consumidor_inteligente_ampliacion.jpg" alt="men" style="width: 100%; height:100%; border-radius: 5px">
+      </div>
+
+      <div class="nombrePerfil">
+        <h1 style="font-size: 35px;">{{consumidor.nombre_consumidor}} {{consumidor.apellido_consumidor}}</h1>
+      </div>
+      <hr />
+      <div class="row informacionPerfil" style="margin: 5%">
+
+          <div class="col-sm-4 subtitulo">
+            <h2>Usuario: </h2>
           </div>
-        </mat-tab>
+          <div class="col-sm-8 dato">
+            <h2>{{consumidor.usuario_consumidor}}</h2>
+          </div>
 
-        <!--OFERTAS DE INTERES-->
-        <mat-tab label="Ofertas de Interes">
-          <div class="contenido">
-            <ul style="width: 100%; height: 100%;">
-              <li *ngFor="let oferta of ofertas" class="cartaOferta">
+          <div class="col-sm-4 subtitulo">
+              <h2>Cédula: </h2>
+            </div>
+            <div class="col-sm-8 dato">
+              <h2>{{consumidor.cedula_consumidor}}</h2>
+            </div>
+
+          <div class="col-sm-4 subtitulo">
+            <h2>Correo: </h2>
+          </div>
+          <div class="col-sm-8 dato">
+            <h2>{{consumidor.correo_consumidor}}</h2>
+          </div>
+
+          <div class="col-sm-4 subtitulo">
+            <h2>Teléfono: </h2>
+          </div>
+          <div class="col-sm-8 dato">
+            <h2>{{consumidor.telefono_consumidor}}</h2>
+          </div>
+        </div>
+        
+      <hr />
+      <div class="modificarPerfil">
+        <button mat-raised-button style="background-color:#32936F; margin: auto">Modificar Perfil</button>
+      </div>
+    </div>
+
+    <div class="elementosPerfil col-sm-9" style="margin-top:2%">
+      <div class="campos">
+        <mat-tab-group>
+
+          <!--MIS DEMANDAS-->
+          <mat-tab label="Mis Demandas">
+            <div class="contenido">
+              <mat-list style="width: 100%; ">
+                <mat-list-item *ngFor="let demanda of demandass">
+                  
+                  <div class="imagenLista">
+                    <img mat-line src="./../../../assets/img/iconoSemilla.png" style="width: 70px; height: 80px;">
+                  </div>
+
+                  <div class="infoLista">
+                    <h4 mat-line>{{demanda.nombre_producto}}</h4>
+                    <p mat-line>Cantidad: {{demanda.cantidad_producto}} {{demanda.medida_producto}} </p>
+                    <hr mat-line />
+                  </div>
+
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </mat-tab>
+
+          <!--OFERTAS DE INTERES-->
+          <mat-tab label="Ofertas de Interes">
+            <div class="contenido">
+              <ul style="width: 100%; height: 100%;">
+                <li *ngFor="let oferta of ofertas" class="cartaOferta">
                   <mat-card class="carta">
-                      <mat-card-header class="headerCartaOferta">
-                        <div mat-card-avatar class="headerCarta"></div>
-                        <mat-card-title style="margin-bottom: 3px;">{{oferta.nombre}}</mat-card-title>
-                        <mat-card-subtitle>{{oferta.productor}}</mat-card-subtitle>
-                      </mat-card-header>
-                      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="imgOferta" class="imagenOferta" >
-                      <mat-card-content>
-                        <p class="descripcion">
-                          {{oferta.descripcion}}
-                        </p>
-                      </mat-card-content>
-                      <mat-card-actions>
-                        <button mat-button style="background-color: #32936F; bottom: 15px; margin-left: 15px">VER</button>
-                        <button mat-button style="background-color: #FB5A5A; bottom: 15px">ELIMINAR</button>
-                      </mat-card-actions>
-                    </mat-card>
-              </li>
-            </ul>
-          </div>
-        </mat-tab>
-        <mat-tab label="Chats">
-          <div class="contenido">
-          </div>
-        </mat-tab>
-      </mat-tab-group>
+                    <mat-card-header class="headerCartaOferta">
+                      <div mat-card-avatar class="headerCarta"></div>
+                      <mat-card-title style="margin-bottom: 3px;font-size:18px; font-family: 'Gabriela', serif; margin-top:5px">{{oferta.nombre_producto}}</mat-card-title>
+                      <mat-card-subtitle style="font-family: 'Philosopher', sans-serif;font-size: 16px">{{oferta.productor.nombre_productor}} {{oferta.productor.apellido_productor}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="imgOferta" class="imagenOferta">
+                    <mat-card-content>
+                      <p class="descripcion">
+                        {{oferta.descripcion_producto}}
+                      </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button style="background-color: #32936F; bottom: 15px; margin-left: 15px" [routerLink]="['/oferta', oferta.id_oferta]">VER</button>
+                      <button mat-button style="background-color: #FB5A5A; bottom: 15px">ELIMINAR</button>
+                    </mat-card-actions>
+                  </mat-card>
+                </li>
+              </ul>
+            </div>
+          </mat-tab>
+          <mat-tab label="Chats">
+            <div class="contenido" style="background-color: rgb(248, 248, 248);">
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
     </div>
   </div>
 </div>

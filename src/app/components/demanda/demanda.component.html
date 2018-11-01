@@ -13,6 +13,7 @@
         <div style="margin-left:30%;width: 100%;text-align: center">
             <h1 class="titulo">Publica Tu Demanda</h1>
           </div>
+          
         <mat-horizontal-stepper linear #stepper class="headerStep" style="padding-top: 10%"> 
 
             <mat-step [stepControl]="firstFormGroup" errorMessage="Producto Requerido">
@@ -64,7 +65,7 @@
                     <input matInput placeholder="Ciudad" formControlName="ciudadCtrl" [(ngModel)]="demanda.ciudad_demanda" required>
                   </mat-form-field>
                   <mat-form-field class="direccion">
-                      <input matInput placeholder="Dirección" [(ngModel)]="demanda.consumidor" formControlName="direccionCtrl" >
+                      <input matInput placeholder="Cédula" [(ngModel)]="demanda.consumidor" formControlName="direccionCtrl" >
                     </mat-form-field>
                   </div>
               <div>
