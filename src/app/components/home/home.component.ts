@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    
     var carousel = $(".carousel"),
       currdeg = 0;
 

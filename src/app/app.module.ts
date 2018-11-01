@@ -21,6 +21,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //Material
 import {MaterialModule} from "./material";
 import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
+//Graficos
+import { ChartsModule } from 'ng2-charts';
+import { GraficoComponent } from './components/grafico/grafico.component';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -47,12 +50,14 @@ const appRoutes: Routes = [
     FormComponent,
     PerfilConsumidorComponent,
     BarraNavegacionComponent,
+    GraficoComponent,
   
   ],
   imports: [
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyADXoaV6DsrjRMBT1yfjNBPyy0KGG2tymc'
     }),
+    ChartsModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,

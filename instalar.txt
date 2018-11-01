@@ -14,3 +14,6 @@ ng g c nombre
 npm install @agm/core --save
 npm install sweetalert2 --save
 npm install --save @angular/material @angular/cdk @angular/animations
+
+npm install ng2-charts --save
+npm install chart.js --save
