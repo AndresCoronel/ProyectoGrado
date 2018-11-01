@@ -4,6 +4,7 @@ import { ConsumidorService } from '../../services/consumidor/consumidor.service'
 import { Router, ActivatedRoute } from "@angular/router";
 import swal from 'sweetalert2'
 import $ from 'jquery'
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-registro-consumidor',
   templateUrl: './registro-consumidor.component.html',
@@ -12,9 +13,13 @@ import $ from 'jquery'
 export class RegistroConsumidorComponent implements OnInit {
   habilitar: boolean= true;
   consumidores: Consumidor[];
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
   private consumidor: Consumidor = new Consumidor();
   constructor(private consumidorService: ConsumidorService, private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,  private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     $('input').focus(function(){
@@ -29,7 +34,23 @@ export class RegistroConsumidorComponent implements OnInit {
       } else {
         $(this).addClass('filled');
       }
-    })  
+    });
+    this.firstFormGroup = this._formBuilder.group({
+      nombreCtrl: ['', Validators.required],
+      apellidoCtrl: ['', Validators.required]
+
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      correoCtrl: ['', Validators.required]
+    }); 
+    this.thirdFormGroup = this._formBuilder.group({
+      telefonoCtrl: ['', Validators.required]
+    });  
+    this.fourthFormGroup = this._formBuilder.group({
+      usuarioCtrl:['', Validators.required],
+      contraseniaCtrl:['', Validators.required]
+    });  
+   
 
 
     this.cargarConsumidor();
