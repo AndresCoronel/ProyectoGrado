@@ -4,6 +4,8 @@ import { DemandaService } from '../../services/demanda/demanda.service';
 import { Demanda } from '../../models/demanda';
 import { ConsumidorService } from '../../services/consumidor/consumidor.service';
 import { Consumidor } from '../../models/consumidor';
+import { Oferta } from '../../models/oferta';
+import { OfertaService } from '../../services/oferta/oferta.service';
 
 export interface Demandas {
   name: string;
@@ -20,6 +22,8 @@ export interface Ofertas {
   styleUrls: ['./perfil-consumidor.component.css']
 })
 export class PerfilConsumidorComponent implements OnInit {
+  ofertas: Oferta[];
+  private oferta: Oferta = new Oferta();
   consumidores: Consumidor[];
   private consumidor: Consumidor = new Consumidor();
   demandass: Demanda[];
@@ -67,7 +71,7 @@ export class PerfilConsumidorComponent implements OnInit {
     }
   ];
 
-  ofertas: Ofertas[] = [
+  ofertas1: Ofertas[] = [
     {
       nombre: 'Demanda 1',
       productor: 'Edwin Guerrero',
@@ -121,9 +125,13 @@ export class PerfilConsumidorComponent implements OnInit {
   ];
 
   constructor(private demandaService: DemandaService, private router: Router,
-    private activatedRoute: ActivatedRoute, private consumidorService: ConsumidorService) { }
+    private activatedRoute: ActivatedRoute, private consumidorService: ConsumidorService,
+    private ofertaService: OfertaService) { }
   ngOnInit() {
-    
+    this.ofertaService.getOfertas().subscribe(
+      (ofertas) => { this.ofertas = ofertas}
+    )
+
     this.consumidorService.getConsumidores().subscribe(
       (consumidores) => { this.consumidores = consumidores }
     );

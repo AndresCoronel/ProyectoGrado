@@ -11,4 +11,6 @@ ng g c nombre
 
 /*instalar el google maps
 
-npm install — save @types/googlemaps
+npm install @agm/core --save
+npm install sweetalert2 --save
+npm install --save @angular/material @angular/cdk @angular/animations
