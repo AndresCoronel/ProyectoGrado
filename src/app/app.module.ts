@@ -24,8 +24,8 @@ import { BarraNavegacionComponent } from './components/barra-navegacion/barra-na
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
-  { path: 'principal', component: PaginaPrincipalComponent },
-  { path: '', component: HomeComponent },
+  { path: 'principal', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'registro', component: RegistroConsumidorComponent },
   { path: 'inicioSesion', component: LoginComponent },
   { path: 'oferta/:id_oferta', component: OfertaComponent },

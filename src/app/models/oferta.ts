@@ -7,7 +7,8 @@ export class Oferta {
     precio_producto: number;
     variedad_producto: string;
     descripcion_producto: string;
-    ubicacion_oferta: string;
+    latitud_oferta: number;
+    longitud_oferta: string;
     lugar_oferta: string;
     estado_oferta: string;
     fecha_recoleccion_oferta: string;
