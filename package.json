@@ -30,7 +30,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.4",
     "rxjs": "~6.2.0",
-    "sweetalert2": "^7.28.8",
+    "sweetalert2": "^7.28.11",
     "webpack": "^4.22.0",
     "webpack-cli": "^3.1.2",
     "zone.js": "~0.8.26"
