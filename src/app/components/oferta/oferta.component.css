@@ -1,7 +1,7 @@
 .todo {
     width: 100%;
     position: absolute;
-    background-image: url("https://cdn-3.expansion.mx/dims4/default/65d1b89/2147483647/strip/true/crop/837x837+417+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2F18%2Fe9%2F41595b184efaa4375bd0fe5f2ff4%2Fistock-642438552.jpg");
+    background-image: url("https://www.pum.co.nz/wp/uploads/iStock_11773838_LARGE-Large-1.jpg");
     /* The image used */
     background-color: #cccccc;
     /* Used if the image is unavailable */
@@ -74,7 +74,7 @@
     font-family: 'Gabriela', serif;
     cursor: pointer;
     background-color: white;
-    margin-left: 55%;
+    margin-left: 10%;
 }
 
 .botonMensaje:hover {

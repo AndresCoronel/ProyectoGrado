@@ -36,6 +36,9 @@
               <form [formGroup]="secondFormGroup">
                 <ng-template matStepLabel>Correo Electronico</ng-template>
                 <div class="paso">
+                    <mat-form-field class="Cedula">
+                        <input matInput placeholder="Cédula" [(ngModel)]="consumidor.cedula_consumidor" formControlName="correoCtrl" required>
+                      </mat-form-field>
                 <mat-form-field class="correo">
                   <input matInput placeholder="Correo Electronico" [(ngModel)]="consumidor.correo_consumidor" formControlName="correoCtrl" required>
                 </mat-form-field>
@@ -129,3 +132,4 @@
     </div>
   </div>
 -->
+

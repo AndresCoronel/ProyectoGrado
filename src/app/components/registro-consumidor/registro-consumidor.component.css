@@ -126,12 +126,17 @@
       margin-left: 10px;
       width: 32%;
   }
+  .cedula{
+    margin-top: 15px;
+      width: 32%;
+  }
   .nombre{
     margin-top: 15px;
     width: 32%;
   }
   .correo{
     margin-top: 15px;
+    margin-left: 10px;
     width: 32%;
   }
   .telefono{
