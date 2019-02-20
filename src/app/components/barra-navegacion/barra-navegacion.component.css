@@ -42,3 +42,9 @@
       position: relative;
       background-color: #32936F
   }
+.icono{
+    width: 4%;
+    height: 65%;
+    background-image: url(https://cdn1.iconfinder.com/data/icons/icons-for-a-site-1/64/advantage_eco_friendly-128.png);
+    background-size: 100% 100%; 
+}

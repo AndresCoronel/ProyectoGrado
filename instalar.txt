@@ -12,8 +12,16 @@ ng g c nombre
 /*instalar el google maps
 
 npm install @agm/core --save
+
+/alertas
 npm install sweetalert2 --save
+
+/angular material
 npm install --save @angular/material @angular/cdk @angular/animations
 
+/graficos
 npm install ng2-charts --save
 npm install chart.js --save
+
+/pagination
+npm install ngx-pagination --save

@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertaService } from '../../services/oferta/oferta.service';
-import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Oferta } from '../../models/oferta';
 import $ from 'jquery';
+import swal from 'sweetalert2'
+import { InteresadoService } from '../../services/interesado/interesado.service';
+import { Interesado } from '../../models/interesado';
+import { Consumidor } from '../../models/consumidor';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,9 +22,12 @@ export class HomeComponent implements OnInit {
   habilitarPrecio: boolean= false;
   h: string = "./../../../assets/img/PAPA.jpg"
 
+  interesados: Interesado[];
+  private interesado: Interesado = new Interesado();
   ofertas: Oferta[];
   private oferta: Oferta = new Oferta();
-  constructor(private ofertaService: OfertaService, private router: Router,
+  p: number = 1;
+  constructor(private ofertaService: OfertaService,private interesadoService: InteresadoService, private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -52,6 +59,16 @@ export class HomeComponent implements OnInit {
      (ofertas) => { this.ofertas = ofertas}
    )
     
+  }
+
+  crearInteresado(oferta: Oferta){
+    console.log(oferta)
+    this.interesadoService.crearInteresado(this.interesado)
+      .subscribe(interesado => {
+        //this.router.navigate(['/principal'])
+        swal("Marcado Correctamente", "success");
+        this.interesado = new Interesado();
+      })
   }
 
   cargarOferta(): void {

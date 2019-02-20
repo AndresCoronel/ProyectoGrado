@@ -1,11 +1,11 @@
 <mat-toolbar class="nav">
     <mat-toolbar-row>
-      
-      <span onclick="location.href='/principal'">SINA</span>
+      <span class="icono" onclick="location.href='/principal'"></span>
+      <span onclick="location.href='/principal'" style="margin-left: -5px">SINA</span>
       <button mat-button style="margin-left: 60px" onclick="location.href='/demanda'"
-      class="btnOpcion"><mat-icon style="margin-right: 5px">add</mat-icon >Publicar Demanda</button>
-      <button mat-button class="btnOpcion"><mat-icon style="margin-right: 5px">not_listed_location</mat-icon>Plan De Compra</button>
-      <button mat-button class="btnOpcion"><mat-icon style="margin-right: 5px">spa</mat-icon>Acerca De Nosotros</button>
+      class="btnOpcion" *ngIf="visible == true"><mat-icon style="margin-right: 5px" >add</mat-icon >Publicar Demanda</button>
+      <button mat-button class="btnOpcion" *ngIf="visible == true"><mat-icon style="margin-right: 5px">not_listed_location</mat-icon>Plan De Compra</button>
+      <button mat-button class="btnOpcion" ><mat-icon style="margin-right: 5px" >spa</mat-icon>Acerca De Nosotros</button>
       <span class="example-spacer"></span>
         <button mat-mini-fab [matMenuTriggerFor]="menu" class="btnMenu">
             <mat-icon>toc</mat-icon>

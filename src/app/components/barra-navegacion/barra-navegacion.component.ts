@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barra-navegacion.component.css']
 })
 export class BarraNavegacionComponent implements OnInit {
-
+  visible: boolean= false;
+  vis: string;
   constructor() { }
-
   ngOnInit() {
+  }
+
+  cambiarEstado(){
+    console.log("cambiar")
   }
 
 }

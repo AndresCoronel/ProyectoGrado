@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Productor } from '../models/productor';
+import { Productor } from '../../models/productor';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 

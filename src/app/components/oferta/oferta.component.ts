@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import $ from 'jquery'
 import { OfertaService } from '../../services/oferta/oferta.service';
 import { Oferta } from '../../models/oferta';
-import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';
-import { ProductorService } from '../../services/productor.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProductorService } from '../../services/productor/productor.service';
 import { Productor } from '../../models/productor';
-import { variable } from '../../../../node_modules/@angular/compiler/src/output/output_ast';
+import { variable } from '@angular/compiler/src/output/output_ast';
 import { ViewChild } from '@angular/core';
 
 

@@ -12,6 +12,7 @@ export class Oferta {
     lugar_oferta: string;
     estado_oferta: string;
     fecha_recoleccion_oferta: string;
-    cedula_productor: string;
+    cedula_productor: number;
+    create_at: string;
 
 }

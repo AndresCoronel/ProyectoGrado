@@ -6,6 +6,6 @@ export class Consumidor {
     telefono_consumidor: number;
     correo_consumidor: string;
     contrasenia_consumidor: string;
-    usuario_consumidor: string;
+    username: string;
 
 }

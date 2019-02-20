@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Sistema de información agrícola';
+  static API_URL="http://localhost:8080/api";
 }
