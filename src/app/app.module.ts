@@ -26,6 +26,12 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficoComponent } from './components/grafico/grafico.component';
 //paginacion
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FiltroProductorPipe } from './pipes/filtro-productor.pipe';
+import { ProductoPipe } from './pipes/producto.pipe';
+import { PrecioPipe } from './pipes/precio.pipe';
+import { ZonaPipe } from './pipes/zona.pipe';
+import { CantidadPipe } from './cantidad.pipe';
+import { FechaPipe } from './pipes/fecha.pipe';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -52,7 +58,13 @@ const appRoutes: Routes = [
     FormComponent,
     PerfilConsumidorComponent,
     BarraNavegacionComponent,
-    GraficoComponent
+    GraficoComponent,
+    FiltroProductorPipe,
+    ProductoPipe,
+    PrecioPipe,
+    ZonaPipe,
+    CantidadPipe,
+    FechaPipe
 
   
   ],

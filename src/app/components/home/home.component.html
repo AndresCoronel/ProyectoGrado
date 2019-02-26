@@ -83,25 +83,19 @@
         <h2 class="tituloDos">Marketplace</h2>
         <h3 class="subtitulo">Productos ofertados</h3>
 
-        <input class="barraFiltro" *ngIf="habilitarProductor == true" placeholder="Nombre del productor">
-
-        <select *ngIf="habilitarZona == true" style="width: 30%">
-          <option value="">seleccione...</option>
-          <option value="SANTANDER">SANTANDER</option>
-          <option value="NORTE DE SANTANDER">NORTE DE SANTANDER</option>
-          <option value="NARIÑO">NARIÑO</option>
-          <option value="TOLIMA">TOLIMA</option>
-        </select>
-
-        <input class="barraFiltro" *ngIf="habilitarProducto == true" placeholder="Nombre del producto">
-
+        <input class="barraFiltro" name="term" [(ngModel)]="term" *ngIf="habilitarProductor == true" placeholder="Nombre del productor">
+        <input class="barraFiltro" name="zon" [(ngModel)]="zon" *ngIf="habilitarZona == true" placeholder="Nombre de la zona">
+        <input class="barraFiltro" name="pro" [(ngModel)]="pro" *ngIf="habilitarProducto == true" placeholder="Nombre del producto">
+        <input class="barraFiltro" name="pre" [(ngModel)]="pre" *ngIf="habilitarPrecio == true" placeholder="Estimado del precio" style="color:black">
+        <input class="barraFiltro" name="fec" [(ngModel)]="fec" *ngIf="habilitarFecha == true" placeholder="Fecha" style="color:black">
+        <input class="barraFiltro" name="can" [(ngModel)]="can" *ngIf="habilitarCantidad == true" placeholder="Cantidad en kg" style="color:black">
       </div>
 
       <div class="contenedorSecundario">
 
         <!-- TODAS HABILITADAS -->
         <div class="panelProductosOfertados" *ngIf="habilitarTodas == true">
-          <div class="productos" *ngFor=" let oferta of ofertas | paginate: { itemsPerPage: 4, currentPage: p }">
+          <div class="productos" *ngFor=" let oferta of ofertas | paginate: { itemsPerPage: 6, currentPage: p }">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
@@ -123,11 +117,13 @@
 
         <!-- FILTRAR POR PRODUCTOR -->
         <div class="panelProductosOfertados" *ngIf="habilitarProductor == true">
-          <div class="productos" *ngFor=" let oferta of ofertas">
+          <div class="productos" *ngFor=" let productor of productores | filtroProductor:term">
             <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
+              <img class="img" src="./../../../assets/img/usuario.png" width="310px" height="300px" title="{{productor.nombre_productor}}">
               <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
+                <p class="descripcionProducto">{{productor.nombre_productor}} {{productor.apellido_productor}}</p>
+                <p class="descripcionProducto">{{productor.correo_productor}}</p>
+                <p class="descripcionProducto">{{productor.telefono_productor}}</p>
               </div>
             </div>
             <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
@@ -137,13 +133,15 @@
             </div>
           </div>
         </div>
+        
         <!-- FILTRAR POR ZONA -->
         <div class="panelProductosOfertados" *ngIf="habilitarZona == true">
-          <div class="productos" *ngFor=" let oferta of ofertas">
+          <div class="productos" *ngFor=" let oferta of ofertas | zona:zon">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
                 <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
+                <p class="descripcionProducto">{{oferta.lugar_oferta}}</p>
               </div>
             </div>
             <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
@@ -155,7 +153,7 @@
         </div>
         <!-- FILTRAR POR PRODUCTO -->
         <div class="panelProductosOfertados" *ngIf="habilitarProducto == true">
-          <div class="productos" *ngFor=" let oferta of ofertas">
+          <div class="productos" *ngFor=" let oferta of ofertas | producto:pro">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
@@ -170,12 +168,15 @@
           </div>
         </div>
         <!-- FILTRAR POR FECHA -->
+        
         <div class="panelProductosOfertados" *ngIf="habilitarFecha == true">
+              
           <div class="productos" *ngFor=" let oferta of ofertas">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
                 <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
+                <p class="descripcionProducto">{{oferta.fecha_recoleccion_oferta}}</p>
               </div>
             </div>
             <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
@@ -205,11 +206,12 @@
         </div>
         <!-- FILTRAR POR PRECIO -->
         <div class="panelProductosOfertados" *ngIf="habilitarPrecio == true">
-          <div class="productos" *ngFor=" let oferta of ofertas">
+          <div class="productos" *ngFor=" let oferta of ofertas | precio:pre">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
                 <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
+                <p class="descripcionProducto">{{oferta.precio_producto | currency}}</p>
               </div>
             </div>
             <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">

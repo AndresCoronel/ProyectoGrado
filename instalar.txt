@@ -1,16 +1,18 @@
 npm install sweetalert2 --save
 npm install webpack webpack-cli
 npm install -g @angular/cli 
+
 /* generar servicio
 ng g service nombre
+
 /*generar clase
 ng g class nombre
+
 /*generar componente
 ng g c nombre
 
 
 /*instalar el google maps
-
 npm install @agm/core --save
 
 /alertas
@@ -25,3 +27,6 @@ npm install chart.js --save
 
 /pagination
 npm install ngx-pagination --save
+
+/filtros pipe
+npm install angular-pipes --save
