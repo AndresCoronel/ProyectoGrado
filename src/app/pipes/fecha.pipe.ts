@@ -5,13 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FechaPipe implements PipeTransform {
 
-  transform(fechas: any, fec: number): any {
+  transform(fechas: any, fec: any): any {
     //mirar si es undefined
     if(fec === undefined) return fechas;
     //llenar el filtro nuevo
     return fechas.filter(function(fecha){
-      return fecha.fecha_recoleccion_oferta.toFixed().includes(fec.toString());
+      return fecha.fecha_recoleccion_oferta.toLowerCase().includes(fec.toLowerCase());
     });
   }
+
 
 }

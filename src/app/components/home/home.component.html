@@ -38,14 +38,7 @@
         <span class="sr-only">Next</span>
       </a>
 
-      <div class="buscador" style="position: absolute;">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="barraBuscador" type="search" placeholder="Buscar..." aria-label="Search">
-          <a class="botonBuscar">
-            <i style="font-size: 35px; color: white" class="material-icons left">search</i>
-          </a>
-        </form>
-      </div>
+
     </div>
 
     <div class="contenedorFraseInicio">
@@ -58,20 +51,60 @@
     </div> -->
       <h1 style="width: 40%; padding-bottom: 20px; margin-top: -20px;  border-bottom: 1px solid #395E66">Busca los productos por:</h1>
       <div style="width: 100%; min-width: 50%;">
+
         <button type="button" (click)="setHabilitarTodas()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
           <i style="font-size: 35px;" class="material-icons left">assignment_ind</i>Ver todas</button>
-        <button type="button" (click)="setHabilitarProductor()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size: 35px;" class="material-icons left">assignment_ind</i>Productor</button>
-        <button id="seleccion" (click)="setHabilitarZona()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size:35px; min-width: 10%;  margin-right:10px; width:20; height:20;" class="fa fa-map-marked-alt"></i>Zona</button>
-        <button (click)="setHabilitarProducto()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size: 35px; " class="material-icons left">extension</i>Producto</button>
-        <button (click)="setHabilitarFecha()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size: 35px;" class="material-icons left">watch_later</i>Fecha estimada</button>
-        <button (click)="setHabilitarCantidad()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size: 35px;" class="material-icons">show_chart</i>Cantidad</button>
-        <button (click)="setHabilitarPrecio()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
-          <i style="font-size: 35px; " class="material-icons">monetization_on</i>Precio</button>
+
+
+          <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size: 25px;" class="material-icons left">assignment_ind</i>Productor</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Productor" class="barraBusquedaFiltros" name="term" [(ngModel)]="term">
+              </ul>
+            </div>
+    
+            <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-map-marked-alt"></i>Zona</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Zona" class="barraBusquedaFiltros" name="zon" [(ngModel)]="zon">
+              </ul>
+            </div>
+    
+            <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size: 25px;" class="material-icons left">assignment_ind</i>Producto</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Producto" class="barraBusquedaFiltros" name="pro" [(ngModel)]="pro">
+              </ul>
+            </div>
+    
+            <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size: 25px;" class="material-icons left">assignment_ind</i>Fecha</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Producto" class="barraBusquedaFiltros" name="fec" [(ngModel)]="fec">
+              </ul>
+            </div>
+    
+            <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size: 25px;" class="material-icons left">assignment_ind</i>Cantidad</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Producto" class="barraBusquedaFiltros" name="can" [(ngModel)]="can">
+              </ul>
+            </div>
+    
+            <div class="btn-group" style="margin-left: 20px;">
+              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+                <i style="font-size: 25px;" class="material-icons left">assignment_ind</i>Precio</button>
+              <ul class="dropdown-menu" role="menu">
+                <input placeholder="Producto" class="barraBusquedaFiltros" name="pre" [(ngModel)]="pre">
+              </ul>
+            </div>
+    
+
       </div>
 
 
@@ -82,20 +115,12 @@
       <div style="margin: 1% auto auto 10%; width: 80%;">
         <h2 class="tituloDos">Marketplace</h2>
         <h3 class="subtitulo">Productos ofertados</h3>
-
-        <input class="barraFiltro" name="term" [(ngModel)]="term" *ngIf="habilitarProductor == true" placeholder="Nombre del productor">
-        <input class="barraFiltro" name="zon" [(ngModel)]="zon" *ngIf="habilitarZona == true" placeholder="Nombre de la zona">
-        <input class="barraFiltro" name="pro" [(ngModel)]="pro" *ngIf="habilitarProducto == true" placeholder="Nombre del producto">
-        <input class="barraFiltro" name="pre" [(ngModel)]="pre" *ngIf="habilitarPrecio == true" placeholder="Estimado del precio" style="color:black">
-        <input class="barraFiltro" name="fec" [(ngModel)]="fec" *ngIf="habilitarFecha == true" placeholder="Fecha" style="color:black">
-        <input class="barraFiltro" name="can" [(ngModel)]="can" *ngIf="habilitarCantidad == true" placeholder="Cantidad en kg" style="color:black">
       </div>
 
       <div class="contenedorSecundario">
-
         <!-- TODAS HABILITADAS -->
-        <div class="panelProductosOfertados" *ngIf="habilitarTodas == true">
-          <div class="productos" *ngFor=" let oferta of ofertas | paginate: { itemsPerPage: 6, currentPage: p }">
+        <div class="panelProductosOfertados">
+          <div class="productos" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | paginate: { itemsPerPage: 4, currentPage: p }">
             <div class="div-img hidden">
               <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
               <div class="text">
@@ -103,9 +128,6 @@
               </div>
             </div>
             <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" (click)="crearInteresado(oferta.id_oferta)">Interesado
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>s
               <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
                 <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
               </button>
@@ -113,117 +135,10 @@
           </div>
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
-
-
-        <!-- FILTRAR POR PRODUCTOR -->
-        <div class="panelProductosOfertados" *ngIf="habilitarProductor == true">
-          <div class="productos" *ngFor=" let productor of productores | filtroProductor:term">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/usuario.png" width="310px" height="300px" title="{{productor.nombre_productor}}">
-              <div class="text">
-                <p class="descripcionProducto">{{productor.nombre_productor}} {{productor.apellido_productor}}</p>
-                <p class="descripcionProducto">{{productor.correo_productor}}</p>
-                <p class="descripcionProducto">{{productor.telefono_productor}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- FILTRAR POR ZONA -->
-        <div class="panelProductosOfertados" *ngIf="habilitarZona == true">
-          <div class="productos" *ngFor=" let oferta of ofertas | zona:zon">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-              <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-                <p class="descripcionProducto">{{oferta.lugar_oferta}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- FILTRAR POR PRODUCTO -->
-        <div class="panelProductosOfertados" *ngIf="habilitarProducto == true">
-          <div class="productos" *ngFor=" let oferta of ofertas | producto:pro">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-              <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- FILTRAR POR FECHA -->
-        
-        <div class="panelProductosOfertados" *ngIf="habilitarFecha == true">
-              
-          <div class="productos" *ngFor=" let oferta of ofertas">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-              <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-                <p class="descripcionProducto">{{oferta.fecha_recoleccion_oferta}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- FILTRAR POR CANTIDAD -->
-        <div class="panelProductosOfertados" *ngIf="habilitarCantidad == true">
-          <div class="productos" *ngFor=" let oferta of ofertas">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-              <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- FILTRAR POR PRECIO -->
-        <div class="panelProductosOfertados" *ngIf="habilitarPrecio == true">
-          <div class="productos" *ngFor=" let oferta of ofertas | precio:pre">
-            <div class="div-img hidden">
-              <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-              <div class="text">
-                <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-                <p class="descripcionProducto">{{oferta.precio_producto | currency}}</p>
-              </div>
-            </div>
-            <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-              <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-                <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
       <hr>
+
+  
 
       <div class="container">
         <h1 style="margin-bottom: 30px;" class="titulo">TESTIMONIOS</h1>
@@ -295,66 +210,66 @@
         </div>
 
         <div class="col-sm-4" style="height: 100%;margin-top: 7px">
-            <h2 class="titulo">Preguntas frecuentes</h2>
-            <div id="accordion" role="tablist">
-              <div class="card" style="margin-top:  2% ; margin-left: 2%; margin-right: 2%">
-                <div class="card-header" role="tab" id="headingOne">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Pregunta 1
-                    </a>
-                  </h5>
-                </div>
+          <h2 class="titulo">Preguntas frecuentes</h2>
+          <div id="accordion" role="tablist">
+            <div class="card" style="margin-top:  2% ; margin-left: 2%; margin-right: 2%">
+              <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Pregunta 1
+                  </a>
+                </h5>
+              </div>
 
-                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                    tempor
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="margin-top:  1% ; margin-left: 2%; margin-right: 2%">
-                <div class="card-header" role="tab" id="headingTwo">
-                  <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Pregunta 2
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                    tempor
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="margin-top:  1% ; margin-left: 2%; margin-right: 2%">
-                <div class="card-header" role="tab" id="headingThree">
-                  <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      pregunta 3
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                    tempor
-                  </div>
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
                 </div>
               </div>
             </div>
+            <div class="card" style="margin-top:  1% ; margin-left: 2%; margin-right: 2%">
+              <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Pregunta 2
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+                </div>
+              </div>
+            </div>
+            <div class="card" style="margin-top:  1% ; margin-left: 2%; margin-right: 2%">
+              <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    pregunta 3
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-      </div> 
+      </div>
+
 
       <hr>
 
 
     </div>
   </div>
+
+
 
 </div>

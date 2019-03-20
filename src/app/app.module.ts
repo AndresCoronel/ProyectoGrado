@@ -30,7 +30,7 @@ import { FiltroProductorPipe } from './pipes/filtro-productor.pipe';
 import { ProductoPipe } from './pipes/producto.pipe';
 import { PrecioPipe } from './pipes/precio.pipe';
 import { ZonaPipe } from './pipes/zona.pipe';
-import { CantidadPipe } from './cantidad.pipe';
+import { CantidadPipe } from './pipes/cantidad.pipe';
 import { FechaPipe } from './pipes/fecha.pipe';
 
 const appRoutes: Routes = [

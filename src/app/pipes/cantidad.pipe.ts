@@ -13,5 +13,4 @@ export class CantidadPipe implements PipeTransform {
       return cantidad.cantidad_producto.toFixed().includes(can.toString());
     });
   }
-
 }

@@ -15,13 +15,7 @@ import { ProductorService } from '../../services/productor/productor.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  habilitarTodas: boolean = true;
-  habilitarProductor: boolean = false;
-  habilitarZona: boolean = false;
-  habilitarProducto: boolean = false;
-  habilitarFecha: boolean = false;
-  habilitarCantidad: boolean = false;
-  habilitarPrecio: boolean = false;
+  
   h: string = "./../../../assets/img/PAPA.jpg"
 
   interesados: Interesado[];
@@ -31,16 +25,17 @@ export class HomeComponent implements OnInit {
   productores: Productor[];
   private productor: Productor = new Productor();
   p: number = 1;
+  
   constructor(private ofertaService: OfertaService, private interesadoService: InteresadoService,
     private productorService: ProductorService, private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
+    
     //CARGAR LAS OFERTAS
     this.cargarOferta();
     this.ofertaService.getOfertas().subscribe(
-      (ofertas) => { this.ofertas = ofertas }
+      (ofertas) => { this.ofertas = ofertas  }
     )
     //CARGAR LOS PRODUCTORES
     this.cargarProductor();
@@ -79,68 +74,5 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-  //BANDERAS PARA BOTONES DE FILTROS
-  setHabilitarTodas(): void {
-    this.habilitarTodas = true;
-    this.habilitarProductor = false;
-    this.habilitarProducto = false;
-    this.habilitarZona = false;
-    this.habilitarFecha = false;
-    this.habilitarCantidad = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarProductor(): void {
-    this.habilitarTodas = false;
-    this.habilitarProductor = true
-    this.habilitarProducto = false;
-    this.habilitarZona = false;
-    this.habilitarFecha = false;
-    this.habilitarCantidad = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarZona(): void {
-    this.habilitarTodas = false;
-    this.habilitarZona = true
-    this.habilitarProducto = false;
-    this.habilitarProductor = false;
-    this.habilitarFecha = false;
-    this.habilitarCantidad = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarProducto(): void {
-    this.habilitarTodas = false;
-    this.habilitarProducto = true;
-    this.habilitarProductor = false;
-    this.habilitarZona = false;
-    this.habilitarFecha = false;
-    this.habilitarCantidad = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarFecha(): void {
-    this.habilitarTodas = false;
-    this.habilitarFecha = true
-    this.habilitarProducto = false;
-    this.habilitarProductor = false;
-    this.habilitarZona = false;
-    this.habilitarCantidad = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarCantidad(): void {
-    this.habilitarTodas = false;
-    this.habilitarCantidad = true
-    this.habilitarProducto = false;
-    this.habilitarProductor = false;
-    this.habilitarZona = false;
-    this.habilitarFecha = false;
-    this.habilitarPrecio = false;
-  }
-  setHabilitarPrecio(): void {
-    this.habilitarTodas = false;
-    this.habilitarPrecio = true
-    this.habilitarProducto = false;
-    this.habilitarProductor = false;
-    this.habilitarZona = false;
-    this.habilitarFecha = false;
-    this.habilitarCantidad = false;
-  }
+  
 }

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barra-navegacion.component.css']
 })
 export class BarraNavegacionComponent implements OnInit {
-  visible: boolean= false;
+  visible: boolean= true;
   vis: string;
   constructor() { }
   ngOnInit() {
