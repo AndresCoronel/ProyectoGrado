@@ -31,7 +31,14 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    
+    //MANTENER ACTIVO LOS BOTONES
+    $(function() {
+      var botones = $(".container button");
+      botones.click(function() {
+        botones.removeClass('active');
+        $(this).addClass('active');
+      });
+    });
     //CARGAR LAS OFERTAS
     this.cargarOferta();
     this.ofertaService.getOfertas().subscribe(

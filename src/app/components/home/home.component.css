@@ -3,11 +3,6 @@
     margin: 0px
 }
 
-.content {
-    width: 100%;
-    height: 100%;
-    margin: 0px
-}
 
 .galeriaInicio {
     width: 100%;
@@ -195,11 +190,11 @@ hr {
     color: white
 }
 
-.botonFiltro:focus {
+/* .botonFiltro:focus {
     outline: none;
     background-color: #32936F;
     color: white
-}
+} */
 
 .testimonio {
     width: 30%;
@@ -313,11 +308,12 @@ hr {
 }
 
 .barraBusquedaFiltros{
-    width: 100%;
-    height: 5vh;
+    width: 90%;
+    height: 100%;
+    height: 6vh;
     border-radius: 5px;
     background: none;
-    border: 2px solid #32936F;
+    border: 1px solid #32936F;
     color: black;
     font-size: 16px;
     font: bolder;
@@ -327,3 +323,16 @@ hr {
 .barraBusquedaFitros:focus {
     outline: 0px;
 }
+
+.button {
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+  }
+  
+  .active {
+    outline: none;
+    background-color: #32936F;
+    color: white
+  }
