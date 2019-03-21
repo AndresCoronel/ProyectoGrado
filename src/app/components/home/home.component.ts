@@ -9,6 +9,8 @@ import { Interesado } from '../../models/interesado';
 import { Consumidor } from '../../models/consumidor';
 import { Productor } from '../../models/productor';
 import { ProductorService } from '../../services/productor/productor.service';
+import { TestimonioService } from '../../services/testimonio/testimonio.service';
+import { Testimonio } from '../../models/testimonio';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,18 +19,24 @@ import { ProductorService } from '../../services/productor/productor.service';
 export class HomeComponent implements OnInit {
   
   h: string = "./../../../assets/img/PAPA.jpg"
+  
+  testimonios: Testimonio[];
+  private testimonio: Testimonio= new Testimonio();
 
   interesados: Interesado[];
   private interesado: Interesado = new Interesado();
+  
   ofertas: Oferta[];
   private oferta: Oferta = new Oferta();
+  
   productores: Productor[];
   private productor: Productor = new Productor();
+  
   p: number = 1;
   
-  constructor(private ofertaService: OfertaService, private interesadoService: InteresadoService,
-    private productorService: ProductorService, private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+  constructor(private ofertaService: OfertaService, private interesadoService: InteresadoService, 
+    private testimonioService: TestimonioService, private productorService: ProductorService, 
+    private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     //MANTENER ACTIVO LOS BOTONES
@@ -49,6 +57,13 @@ export class HomeComponent implements OnInit {
     this.productorService.getProductores().subscribe(
       (productores) => { this.productores = productores }
     )
+    //CARGAR LOS TESTIMONIOS
+    this.testimonioService.getTestimonios().subscribe(
+      (testimonios) => { this.testimonios = testimonios }
+    )
+
+
+
   }
   //INTERESADOS
   crearInteresado(oferta: Oferta) {
@@ -81,5 +96,24 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+  //TESTIMONIOS
+  crearTestimonio(): void {
+    this.testimonioService.crearTestimonio(this.testimonio)
+      .subscribe(testimonio => {
+        swal("Testimonio publicado", "success");
+        this.testimonio = new Testimonio();
+        this.router.navigate(['/principal'])
+      })
+  }
+  cargarTestimonio(): void {
+    this.activatedRoute.params.subscribe(params => {
+      let id_testimonio = params['id_testimonio']
+      if (id_testimonio) {
+        this.testimonioService.getTestimonio(id_testimonio)
+          .subscribe((testimonio) => this.testimonio = testimonio)
+      }
+    })
+  }
+
   
 }

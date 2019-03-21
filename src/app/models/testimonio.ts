@@ -4,8 +4,8 @@ export class Testimonio {
 
     id_testimonio: number;
     descripcion_testimonio: string;
-    cedula_productor: number;
-    cedula_consumidor: number;
+    nombre_persona: string;
+    ciudad_persona: string;
     create_at: string;
 
 }
