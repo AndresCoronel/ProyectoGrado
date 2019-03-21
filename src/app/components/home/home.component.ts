@@ -102,7 +102,8 @@ export class HomeComponent implements OnInit {
       .subscribe(testimonio => {
         swal("Testimonio publicado", "success");
         this.testimonio = new Testimonio();
-        this.router.navigate(['/principal'])
+        location.reload();
+
       })
   }
   cargarTestimonio(): void {
