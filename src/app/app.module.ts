@@ -32,6 +32,7 @@ import { PrecioPipe } from './pipes/precio.pipe';
 import { ZonaPipe } from './pipes/zona.pipe';
 import { CantidadPipe } from './pipes/cantidad.pipe';
 import { FechaPipe } from './pipes/fecha.pipe';
+import { ProductorComponent } from './components/productor/productor/productor.component';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -43,6 +44,8 @@ const appRoutes: Routes = [
   { path: 'demanda', component: DemandaComponent },
   { path: 'registro/form', component: FormComponent },
   { path: 'registro/form/:cedula_consumidor', component: FormComponent },
+  { path: 'productor', component: ProductorComponent },
+  { path: 'productor/:cedula_productor', component: ProductorComponent }
 ]
 @NgModule({
   declarations: [
@@ -64,7 +67,8 @@ const appRoutes: Routes = [
     PrecioPipe,
     ZonaPipe,
     CantidadPipe,
-    FechaPipe
+    FechaPipe,
+    ProductorComponent
 
   
   ],
