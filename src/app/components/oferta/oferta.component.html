@@ -1,115 +1,105 @@
-<div class="todo">
-
-  <div class="col-sm-12 row" style="height: 100%">
-
-    <div style="width: 100%; text-align: center;margin: 10px 30% 10px 30%">
-      <h1 class="titulo" id="tituloProducto">{{oferta.nombre_producto}}</h1>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="informacion">
-        <h2 class="encabezados">Información del producto</h2>
-        <div class="row" style="margin: 5%;padding-left: 5%">
-
-          <div class="col-sm-4 subtitulos ">
-            <h2>Cantidad: </h2>
-          </div>
-
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</h2>
-          </div>
-
-          <div class="col-sm-4 subtitulos">
-            <h2>Variedad: </h2>
-          </div>
-
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.variedad_producto}}</h2>
-          </div>
-
-          <div class="col-sm-4.5 subtitulos">
-            <h2>Precio neto: </h2>
-          </div>
-
-          <div class="col-sm-7 datos">
-            <h2>$ {{oferta.precio_producto}}</h2>
-          </div>
-
-
-          <div class="col-sm-4 subtitulos">
-            <h2>Disponible: </h2>
-          </div>
-
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.fecha_recoleccion_oferta}}</h2>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="informacion">
-        <h2 class="encabezados">Información del productor
-        </h2>
-        <div class="row" style="margin: 5%;padding-left: 5%">
-
-          <div class="col-sm-4 subtitulos">
-            <h2>Nombre: </h2>
-          </div>
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.productor.nombre_productor}} {{oferta.productor.apellido_productor}}</h2>
-          </div>
-
-          <div class="col-sm-4 subtitulos">
-            <h2>Correo: </h2>
-          </div>
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.productor.correo_productor}}</h2>
-          </div>
-
-          <div class="col-sm-4 subtitulos">
-            <h2>Teléfono: </h2>
-          </div>
-          <div class="col-sm-8 datos">
-            <h2>{{oferta.productor.telefono_productor}}</h2>
-          </div>
-          <button type="button" class="botonMensaje" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contactarse para adquirir producto</button>
-
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 row">
-      <div class="informacion" style="opacity: 1;">
-        <h2 class="encabezados">Ubicación de la oferta</h2>
-        <div class="row">
-          <div class="col-sm-12 datos">
-            <agm-map [latitude]="oferta.latitud_oferta" [longitude]="oferta.longitud_oferta">
-              <agm-marker [latitude]="oferta.latitud_oferta" [longitude]="oferta.longitud_oferta"></agm-marker>
-            </agm-map>
-            <h2>Lugar: {{oferta.lugar_oferta}}</h2>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-sm-12">
-        <div class="informacion">
-          <h2 class="encabezados">Otros detalles</h2>
-          <div class="row">
-            <div class="col-sm-12 datos">
-              <h2>{{oferta.descripcion_producto}}</h2>
-            </div>
-
-          </div>
-        </div>
-      </div>
+<div class="container" style="text-align: center">
+  <div>
+    <h2 class="titulo">{{oferta.nombre_producto}}</h2>
+    <h2 style="display: inline-block; padding-left: 10px">{{oferta.variedad_producto}}</h2>
+  </div>
+  <div style="height: 35vh; width: 100%;">
+    <div class="item tm1">
+      <img src="http://www.videoskick.com/wp-content/uploads/2016/06/Wallpaper-of-Egyptian-sphinx-and-pyramid-on-sunset.jpg">
     </div>
 
 
+    <div class="item tm2">
+      <img src="./../../../assets/img/{{oferta.nombre_producto}}.jpg">
+    </div>
+
+    <div class="item tm3">
+      <img src="./../../../assets/img/{{oferta.nombre_producto}}.jpg">
+    </div>
+
+    <div class="item tm4">
+      <img src="./../../../assets/img/{{oferta.nombre_producto}}.jpg">
+    </div>
   </div>
 
+  <div class="tarjetaInformacion">
+    <h2 class="encabezados">Información del Productor</h2>
+    <div class="row">
 
+      <div class="col-sm-5 subtitulos" style="text-align: left">
+        <h2>Precio neto: </h2>
+      </div>
 
+      <div class="col-sm-7 datos">
+        <h2>{{oferta.precio_producto | currency}}</h2>
+      </div>
 
+      <div class="col-sm-4 subtitulos ">
+        <h2>Cantidad: </h2>
+      </div>
+
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</h2>
+      </div>
+
+      <div class="col-sm-4 subtitulos">
+        <h2>Variedad: </h2>
+      </div>
+
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.variedad_producto}}</h2>
+      </div>
+
+      <div class="col-sm-4 subtitulos">
+        <h2>Disponible: </h2>
+      </div>
+
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.fecha_recoleccion_oferta}}</h2>
+      </div>
+
+      <div class="col-sm-11 datos">
+          <h2>{{oferta.descripcion_producto}}</h2>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="tarjetaInformacion">
+    <h2 class="encabezados">Información del Productor</h2>
+    <div class="row">
+      <div class="col-sm-4 subtitulos">
+        <h2>Nombre: </h2>
+      </div>
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.productor.nombre_productor}} {{oferta.productor.apellido_productor}}</h2>
+      </div>
+
+      <div class="col-sm-4 subtitulos">
+        <h2>Correo: </h2>
+      </div>
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.productor.correo_productor}}</h2>
+      </div>
+
+      <div class="col-sm-4 subtitulos">
+        <h2>Teléfono: </h2>
+      </div>
+      <div class="col-sm-8 datos">
+        <h2>{{oferta.productor.telefono_productor}}</h2>
+      </div>
+      <button type="button" class="botonMensaje" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contactarse para adquirir producto</button>
+
+    </div>
+
+  </div>
+  <!-- <div class="tarjetaInformacion">
+      <h2 class="encabezados">Ubicación</h2>
+      <agm-map [latitude]="oferta.latitud_oferta" [longitude]="oferta.longitud_oferta">
+          <agm-marker [latitude]="oferta.latitud_oferta" [longitude]="oferta.longitud_oferta"></agm-marker>
+        </agm-map>
+  </div> -->
+</div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -135,5 +125,3 @@
       </div>
     </div>
   </div>
-  
-</div>
