@@ -26,13 +26,15 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficoComponent } from './components/grafico/grafico.component';
 //paginacion
 import {NgxPaginationModule} from 'ngx-pagination';
-import { FiltroProductorPipe } from './pipes/filtro-productor.pipe';
+import { FiltroProductorPipe } from './pipes/productor/filtro-productor.pipe';
 import { ProductoPipe } from './pipes/producto.pipe';
 import { PrecioPipe } from './pipes/precio.pipe';
 import { ZonaPipe } from './pipes/zona.pipe';
 import { CantidadPipe } from './pipes/cantidad.pipe';
 import { FechaPipe } from './pipes/fecha.pipe';
-import { ProductorComponent } from './components/productor/productor/productor.component';
+import { ProductorComponent } from './components/productor/productor.component';
+import { ApellidoProductorPipe } from './pipes/productor/apellido-productor.pipe';
+import { SexoProductorPipe } from './pipes/productor/sexo-productor.pipe';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -68,7 +70,9 @@ const appRoutes: Routes = [
     ZonaPipe,
     CantidadPipe,
     FechaPipe,
-    ProductorComponent
+    ProductorComponent,
+    ApellidoProductorPipe,
+    SexoProductorPipe
 
   
   ],

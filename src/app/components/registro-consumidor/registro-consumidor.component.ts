@@ -5,12 +5,22 @@ import { Router, ActivatedRoute } from "@angular/router";
 import swal from 'sweetalert2'
 import $ from 'jquery'
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+
+export interface Sexo {
+  value: string;
+  sexo: string;
+}
 @Component({
   selector: 'app-registro-consumidor',
   templateUrl: './registro-consumidor.component.html',
   styleUrls: ['./registro-consumidor.component.css']
 })
 export class RegistroConsumidorComponent implements OnInit {
+  sexos: Sexo[] = [
+    { value: 'Hombre', sexo: 'Hombre' },
+    { value: 'Mujer', sexo: 'Mujer' }
+  ];
+
   habilitar: boolean= true;
   consumidores: Consumidor[];
   firstFormGroup: FormGroup;
@@ -37,7 +47,8 @@ export class RegistroConsumidorComponent implements OnInit {
     });
     this.firstFormGroup = this._formBuilder.group({
       nombreCtrl: ['', Validators.required],
-      apellidoCtrl: ['', Validators.required]
+      apellidoCtrl: ['', Validators.required],
+      sexoCtrl: ['', Validators.required]
 
     });
     this.secondFormGroup = this._formBuilder.group({

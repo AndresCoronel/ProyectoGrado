@@ -2,6 +2,7 @@ export class Consumidor {
 
     cedula_consumidor: number;
     nombre_consumidor: string;
+    sexo_consumidor: string;
     apellido_consumidor: string;
     telefono_consumidor: number;
     correo_consumidor: string;

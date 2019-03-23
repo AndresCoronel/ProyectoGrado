@@ -1,4 +1,4 @@
-import { DatePipe } from "../../../node_modules/@angular/common";
+import { DatePipe } from "@angular/common";
 
 export class Testimonio {
 

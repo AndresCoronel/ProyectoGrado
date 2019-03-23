@@ -1,90 +1,100 @@
-
-<div class="general" >
+<div class="general">
   <div style="margin-top:6%;">
 
- <!-- <div class="logoContainer">
+    <!-- <div class="logoContainer">
    <div class="logoDemanda">
    <i class="fa fa-users" aria-hidden="true"></i>
  </div>
 </div> -->
     <!--Step-->
-    
+
     <div class="steper">
-        <div style="margin-left:30%;width: 100%;text-align: center">
-            <h1 class="titulo">Registro</h1>
-          </div>
-        <mat-horizontal-stepper linear #stepper class="headerStep" style="padding-top: 10%"> 
+      <div style="margin-left:30%;width: 100%;text-align: center">
+        <h1 class="titulo">Registro</h1>
+      </div>
+      <mat-horizontal-stepper linear #stepper class="headerStep" style="padding-top: 10%">
 
-            <mat-step [stepControl]="firstFormGroup" errorMessage="Producto Requerido">
-              <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>Nombre</ng-template>
-                <div class="paso">
-                <mat-form-field class="nombre">
-                  <input matInput placeholder="Nombres" [(ngModel)]="consumidor.nombre_consumidor" formControlName="nombreCtrl" required>
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Producto Requerido">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Nombre</ng-template>
+            <div class="paso">
+              <mat-form-field class="nombre">
+                <input matInput placeholder="Nombres" [(ngModel)]="consumidor.nombre_consumidor" formControlName="nombreCtrl" required>
+              </mat-form-field>
+              <mat-form-field class="apellido">
+                <input matInput placeholder="Apellidos" [(ngModel)]="consumidor.apellido_consumidor" formControlName="apellidoCtrl" required>
+              </mat-form-field>
+              <mat-form-field class="tipoCantidad">
+                  <mat-select placeholder="Sexo" [(ngModel)]="consumidor.sexo_consumidor" formControlName="sexoCtrl" required>
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let sexo of sexos" [value]="sexo.value">
+                      {{sexo.sexo}} 
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
-                <mat-form-field class="apellido">
-                  <input matInput placeholder="Apellidos" [(ngModel)]="consumidor.apellido_consumidor" formControlName="apellidoCtrl" required>
-                </mat-form-field>
-                </div>
-                <div>
-                  <button mat-button matStepperNext class="siguiente">Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
-            
-            <mat-step [stepControl]="secondFormGroup" errorMessage="hola" >
-              <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>Correo Electronico</ng-template>
-                <div class="paso">
-                    <mat-form-field class="Cedula">
-                        <input matInput placeholder="Cédula" [(ngModel)]="consumidor.cedula_consumidor" formControlName="correoCtrl" required>
-                      </mat-form-field>
-                <mat-form-field class="correo">
-                  <input matInput placeholder="Correo Electronico" [(ngModel)]="consumidor.correo_consumidor" formControlName="correoCtrl" required>
-                </mat-form-field>
-                </div>
-                <div>
-                  <button mat-button matStepperPrevious class="regresar">Regresar</button>
-                  <button mat-button matStepperNext class="siguiente">Siguiente</button>
-                </div>
-              </form>
-            </mat-step>
+            </div>
+            <div>
+              <button mat-button matStepperNext class="siguiente">Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
 
-            <mat-step [stepControl]="thirdFormGroup">
-              <form [formGroup]="thirdFormGroup">
-              <ng-template matStepLabel>Telefono</ng-template>
-              <div class="paso">
-                  <mat-form-field class="telefono">
-                    <input matInput type="number" placeholder="Telefono" [(ngModel)]="consumidor.telefono_consumidor" formControlName="telefonoCtrl" required >
-                  </mat-form-field>
-                  </div>
-              <div>
-                <button mat-button matStepperPrevious class="regresar">Regresar</button>
-                <button mat-button matStepperNext class="siguiente">Siguiente</button>
-              </div>
-            </form>
-            </mat-step>
+        <mat-step [stepControl]="secondFormGroup" errorMessage="hola">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Correo Electronico</ng-template>
+            <div class="paso">
+              <mat-form-field class="Cedula">
+                <input matInput placeholder="Cédula" [(ngModel)]="consumidor.cedula_consumidor" formControlName="correoCtrl" required>
+              </mat-form-field>
+              <mat-form-field class="correo">
+                <input matInput placeholder="Correo Electronico" [(ngModel)]="consumidor.correo_consumidor" formControlName="correoCtrl"
+                  required>
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious class="regresar">Regresar</button>
+              <button mat-button matStepperNext class="siguiente">Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
 
-           <mat-step [stepControl]="fourthFormGroup">
-                <form [formGroup]="fourthFormGroup">
-                    <ng-template matStepLabel>Cuenta</ng-template>
-                    <div class="paso">
-                        <mat-form-field class="usuario" >
-                      <input matInput placeholder="Usuario" [(ngModel)]="consumidor.username" formControlName="usuarioCtrl" required >
-                        </mat-form-field>
-                        <mat-form-field class="contrasenia">
-                            <input matInput placeholder="Contraseña" [(ngModel)]="consumidor.contrasenia_consumidor" formControlName="contraseniaCtrl" required >
-                              </mat-form-field>
-                    </div>
-                    <div>
-                      <button mat-button matStepperPrevious class="regresar">Regresar</button>
-                      <button mat-button matStepperNext class="siguiente" (click)="crearConsumidor()">Guardar</button>
-                    </div>
-                  </form>
-            </mat-step> -->
-          </mat-horizontal-stepper>
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Telefono</ng-template>
+            <div class="paso">
+              <mat-form-field class="telefono">
+                <input matInput type="number" placeholder="Telefono" [(ngModel)]="consumidor.telefono_consumidor" formControlName="telefonoCtrl"
+                  required>
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious class="regresar">Regresar</button>
+              <button mat-button matStepperNext class="siguiente">Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="fourthFormGroup">
+          <form [formGroup]="fourthFormGroup">
+            <ng-template matStepLabel>Cuenta</ng-template>
+            <div class="paso">
+              <mat-form-field class="usuario">
+                <input matInput placeholder="Usuario" [(ngModel)]="consumidor.username" formControlName="usuarioCtrl" required>
+              </mat-form-field>
+              <mat-form-field class="contrasenia">
+                <input matInput placeholder="Contraseña" [(ngModel)]="consumidor.contrasenia_consumidor" formControlName="contraseniaCtrl"
+                  required>
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious class="regresar">Regresar</button>
+              <button mat-button matStepperNext class="siguiente" (click)="crearConsumidor()">Guardar</button>
+            </div>
+          </form>
+        </mat-step> -->
+      </mat-horizontal-stepper>
+    </div>
   </div>
-</div>
 </div>
 <!--
   <div class="card border-primary mb-3">
@@ -132,4 +142,3 @@
     </div>
   </div>
 -->
-
