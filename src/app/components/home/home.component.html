@@ -42,7 +42,7 @@
   </div>
 
   <div class="contenedorFraseInicio">
-  
+
     <h1 style="width: 40%; padding-bottom: 20px; margin-top: -20px;  border-bottom: 1px solid #395E66">Busca los productos por:</h1>
 
     <div class="container">
@@ -101,25 +101,20 @@
     </div>
 
     <!-- Ofertas -->
-    <div class="contenedorSecundario">
-      <div class="panelProductosOfertados">
-        <div class="productos" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | paginate: { itemsPerPage: 8, currentPage: p }">
-          <div class="div-img hidden">
-            <img class="img" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" width="310px" height="300px" title="{{oferta.nombre_producto}}">
-            <div class="text">
-              <p class="descripcionProducto">{{oferta.descripcion_producto}}</p>
-            </div>
-          </div>
-          <div style="width: 100%;height: 15%; margin-bottom: 100px; background-color: #32936F; margin-right: 30%; text-align: right; padding:2px; border-radius: 0 0 20px 20px; border-top: 2px solid #395E66">
-            <button class="btnVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más
-              <i style="font-size:18px; margin-left:5px;color:white; width:10; height:10;" class="fa fa-angle-right"></i>
-            </button>
+      <div class="container">
+
+        <div class="tarjetaOferta" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | paginate: { itemsPerPage: 8, currentPage: p }">
+          <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Notebook">
+          <div class="descripcionOferta" style="width: 250px">
+            <h1>{{oferta.nombre_producto}}</h1>
+            <p>{{oferta.precio_producto | currency}}</p>
+            <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
           </div>
         </div>
+
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
-    </div>
-    
+
     <hr>
 
 
@@ -136,16 +131,16 @@
           </div>
         </div>
         <div style="width: 100%; height: 50%; margin-top:1%; padding:20px;" align="justify">
-         {{testimonio.descripcion_testimonio}}
+          {{testimonio.descripcion_testimonio}}
         </div>
 
         <div style="width: 100%; height: 25%; padding:20px;" align="justify">
-         Publicado el: {{testimonio.create_at}}
+          Publicado el: {{testimonio.create_at}}
         </div>
       </div>
-      </div>
-      <button type="button" style="width: 100%" class="botonTestimonio" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar un comentario</button>
-   
+    </div>
+    <button type="button" style="width: 100%" class="botonTestimonio" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar un comentario</button>
+
     <hr>
 
     <div style="height: 500px" class="row">
@@ -218,34 +213,32 @@
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Crear testimonio</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-              <div class="form-group col-sm-12">
-                  <label for="message-text" class="col-form-label">Nombre completo:</label>
-                  <input class="form-control col-sm-8" name="nombre_persona"  [(ngModel)]="testimonio.nombre_persona">
-                  <label for="message-text" class="col-form-label">Ciudad:</label>
-                  <input class="form-control col-sm-8" name="ciudad_persona"  [(ngModel)]="testimonio.ciudad_persona">
-                </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Testimonio:</label>
-              <textarea class="form-control" id="message-text" name="descripcion_testimonio" [(ngModel)]="testimonio.descripcion_testimonio"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn" style="background-color: #395E66; color: white" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn" style="background-color: #32936F; color: white" data-dismiss="modal" (click)="crearTestimonio()" >Enviar</button>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear testimonio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group col-sm-12">
+            <label for="message-text" class="col-form-label">Nombre completo:</label>
+            <input class="form-control col-sm-8" name="nombre_persona" [(ngModel)]="testimonio.nombre_persona">
+            <label for="message-text" class="col-form-label">Ciudad:</label>
+            <input class="form-control col-sm-8" name="ciudad_persona" [(ngModel)]="testimonio.ciudad_persona">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Testimonio:</label>
+            <textarea class="form-control" id="message-text" name="descripcion_testimonio" [(ngModel)]="testimonio.descripcion_testimonio"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" style="background-color: #395E66; color: white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn" style="background-color: #32936F; color: white" data-dismiss="modal" (click)="crearTestimonio()">Enviar</button>
       </div>
     </div>
   </div>
-
-  
+</div>

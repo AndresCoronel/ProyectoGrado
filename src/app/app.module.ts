@@ -35,6 +35,7 @@ import { FechaPipe } from './pipes/fecha.pipe';
 import { ProductorComponent } from './components/productor/productor.component';
 import { ApellidoProductorPipe } from './pipes/productor/apellido-productor.pipe';
 import { SexoProductorPipe } from './pipes/productor/sexo-productor.pipe';
+import { PerfilProductorComponent } from './components/productor/perfil-productor/perfil-productor.component';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -47,7 +48,7 @@ const appRoutes: Routes = [
   { path: 'registro/form', component: FormComponent },
   { path: 'registro/form/:cedula_consumidor', component: FormComponent },
   { path: 'productor', component: ProductorComponent },
-  { path: 'productor/:cedula_productor', component: ProductorComponent }
+  { path: 'productor/:cedula_productor', component: PerfilProductorComponent }
 ]
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
     FechaPipe,
     ProductorComponent,
     ApellidoProductorPipe,
-    SexoProductorPipe
+    SexoProductorPipe,
+    PerfilProductorComponent
 
   
   ],

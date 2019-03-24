@@ -2,6 +2,7 @@ export class Productor {
     
     cedula_productor: number;
     nombre_productor: string;
+    sexo_productor: string;
     apellido_productor: string;
     telefono_productor: number;
     correo_productor: string;

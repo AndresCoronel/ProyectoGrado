@@ -5,20 +5,20 @@
     <input type="search" name="term" [(ngModel)]="term" placeholder="Nombre del productor" title="Search" class="campoBusqueda" style="display: inline-block"/>
     <input type="search" name="ape" [(ngModel)]="ape" placeholder="Apellido del productor" class="campoBusqueda" style="display: inline-block; margin-left: 2%"/>
 
-    <select class="custom-select" style="display: inline-block; width: 10%; margin-left: 2%">
-      <option selected>sexo...</option>
-      <option value="Masculino">Hombre</option>
-      <option value="Femenino">Mujer</option>
+    <select aria-placeholder="sexo" class="custom-select" style="display: inline-block; width: 10%; margin-left: 2%" name="sex" [(ngModel)]="sex">
+      <option selected value="">Todos</option>
+      <option value="Hombre">Hombre</option>
+      <option value="Mujer">Mujer</option>
     </select>
   </div>
 
-  <div style="width: 100%; height: 100%;" class="container" *ngFor="let productor of productores | filtroProductor:term | apellidoProductor:ape">
+  <div style="width: 100%; height: 100%;" class="container" *ngFor="let productor of productores | filtroProductor:term | apellidoProductor:ape | sexoProductor:sex">
 
     <div style="width: 20%; height: 80%; display: inline-block">
       <div style="width: 100px; height: 100px; padding: 2%; border: 1px solid gray;  border-radius: 50%" class="container">
         <img style="width: 100%; height: 100%; border-radius: 50%" src="https://images.larepublica.co/s3/412/cms/2018/06/05103448/Campesino.jpg">
         <hr>
-        <button type="button" style="width: 100%" class="botonVerPerfil">Ver perfil</button>
+        <button type="button" style="width: 100%" class="botonVerPerfil" [routerLink]="['/productor', productor.cedula_productor]">Ver perfil</button>
       </div>
     </div>
 

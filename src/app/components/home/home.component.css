@@ -3,7 +3,6 @@
     margin: 0px
 }
 
-
 .galeriaInicio {
     width: 100%;
     height: 40%;
@@ -25,7 +24,6 @@
 }
 
 .mensajeImagen {
-
     text-align: right;
     color: white;
     margin: 2% 2% 15% auto;
@@ -128,50 +126,11 @@ hr {
     height: 500px;
 }
 
-.panelProductosOfertados {
-    width: 100%;
-    height: 800px;
-}
 
 .u {
     width: 100%;
     height: 86%;
     border-radius: 10px 10px 0 0;
-}
-
-.productos {
-    width: 23%;
-    height: 45%;
-    display: inline-block;
-    margin-right: 2%;
-    margin-top: 1%;
-    min-width: 200px;
-    min-height: 100px;
-    left: 0;
-    right: 0;
-    position: relative;
-    border-radius:20px;
-}
-.imagenProducto{
-    height: 100%;
-    width: 100%;
-}
-
-.btnVerMas {
-    background: none;
-    border: none; 
-    padding: 10px; 
-    cursor: pointer; 
-    color:white; 
-    font-size: 18px;
-    text-decoration: none !important;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -ms-user-select: none;
-}
-.btnVerMas:focus{
-    outline: 0px;
 }
 
 .botonFiltro {
@@ -190,7 +149,7 @@ hr {
     color: white
 }
 
-.botonTestimonio{
+.botonTestimonio {
     background-color: #32936F;
     padding: 10px;
     border: none;
@@ -198,12 +157,11 @@ hr {
     cursor: pointer;
     box-shadow: 4px 4px 4px gray;
     border-radius: 5px;
-
 }
-.botonTestimonio:hover{
+
+.botonTestimonio:hover {
     box-shadow: 0px 3px 0px white;
     color: white
-
 }
 
 /* .botonFiltro:focus {
@@ -240,10 +198,6 @@ hr {
     outline: 0px;
 }
 
-::placeholder {
-    color: black;
-}
-
 .clasecss {
     background-color: #ff8800;
     font-weight: bold;
@@ -258,7 +212,6 @@ hr {
     text-align: center;
 }
 
-
 .containerXd {
     left: 0;
     right: 0;
@@ -268,55 +221,6 @@ hr {
     width: 20%
 }
 
-.div-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.div-img.hidden {
-    overflow: hidden;
-}
-
-.div-img .img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-    -moz-transform: translate(0px, 0px);
-    -webkit-transform: translate(0px, 0px);
-    -o-transform: translate(0px, 0px);
-    -webkit-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-    -ms-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
-    z-index: 1;
-}
-
-.div-img .text {
-    font-family: 'Open Sans';
-    position: absolute;
-    z-index: 0;
-    display: block;
-    bottom: 60px;
-    width: 100%;
-    text-align: center;
-    background-color: #32936F;
-    height: 120px;
-    padding: 10px      
-}
-
-.div-img:hover .img {
-    transform: translate(0px, -100px);
-    -ms-transform: translate(0px, -100px);
-    -moz-transform: translate(0px, -100px);
-    -webkit-transform: translate(0px, -120px);
-    -o-transform: translate(0px, -100px);
-}
 .descripcionProducto {
     font-size: 16px;
     color: white;
@@ -324,7 +228,7 @@ hr {
     text-align: justify;
 }
 
-.barraBusquedaFiltros{
+.barraBusquedaFiltros {
     margin-left: 5%;
     width: 90%;
     height: 100%;
@@ -347,10 +251,55 @@ hr {
     border-radius: 5px;
     color: white;
     padding: 10px;
-  }
-  
-  .active {
+}
+
+.active {
     outline: none;
     background-color: #32936F;
     color: white
-  }
+}
+
+.tarjetaOferta {
+    position: relative;
+    max-width: 800px;
+    /* Maximum width */
+    margin: 0 auto;
+    /* Center it */
+    border-radius: 20px;
+    display: inline-block;
+    margin-right: 2%;
+    margin-top: 1%;
+    box-shadow: 4px 4px 4px gray;
+}
+
+.descripcionOferta {
+    position: absolute;
+    /* Position the background text */
+    bottom: 0;
+    /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.botonVerMas {
+    background: none;
+    left: 0;
+    border-radius: 10px;
+    bottom: 0;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #32936F;
+    outline: 0;
+}
+
+.botonVerMas:hover {
+    background-color: #32936F;
+}
