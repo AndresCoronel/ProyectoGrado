@@ -10,7 +10,7 @@ export class VariedadPipe implements PipeTransform {
     if(vari === undefined) return variedades;
     //llenar el filtro nuevo
     return variedades.filter(function(variedad){
-      return variedad.lugar_oferta.toLowerCase().includes(vari.toLowerCase());
+      return variedad.variedad_producto.toLowerCase().includes(vari.toLowerCase());
     });
   }
 
