@@ -11,11 +11,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule, MatTabsModule,MatListModule, MatIconModule, MatCardModule,
+  imports: [MatTooltipModule,MatButtonModule, MatCheckboxModule, MatTabsModule,MatListModule, MatIconModule, MatCardModule,
     MatMenuModule, MatToolbarModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule,MatDatepickerModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatTabsModule,MatListModule, MatIconModule, MatCardModule,
+  exports: [MatTooltipModule,MatButtonModule, MatCheckboxModule, MatTabsModule,MatListModule, MatIconModule, MatCardModule,
     MatMenuModule, MatToolbarModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule,MatDatepickerModule],
 })
 export class MaterialModule { }

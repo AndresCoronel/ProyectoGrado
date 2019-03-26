@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   private productor: Productor = new Productor();
   
   p: number = 1;
+  o: number = 1;
   
   constructor(private ofertaService: OfertaService, private interesadoService: InteresadoService, 
     private testimonioService: TestimonioService, private productorService: ProductorService, 

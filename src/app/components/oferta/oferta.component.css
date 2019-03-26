@@ -16,13 +16,20 @@
 }
 
 .titulo {
-    font-family: 'Philosopher', sans-serif;
-    font-size: 30px;
+    font-family: 'Vollkorn', serif;
+    font-size: 40px;
     font-weight: bolder;
     padding-right: 20px;
     margin-top: 1%;
     display: inline-block;
-    border-right: 2px solid #32936F;
+    border-right: 3px solid #32936F;
+}
+
+.contraTitulo{
+    font-family: 'Open sans', sans-serif;
+    font-size: 30px;
+    display: inline-block; 
+    padding-left: 10px;
 }
 
 .encabezados {
@@ -30,35 +37,30 @@
     width: 100%;
     border-bottom: 2px solid #32936F;
     padding-bottom: 3%;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Vollkorn', serif;
     font-size: 28px;
     font-weight: bold;
 }
+.tituloModalUbicacion{
+    text-align: center;
+    width: 100%;
+    font-family: 'Vollkorn', serif;
+    font-size: 30px;
+    font-weight: bold;
 
+}
 .subtitulos h2 {
-    font-family: 'Philosopher', sans-serif;
-    font-size: 26px;
+    font-family: 'Vollkorn', serif;
+    font-size: 24px;
+    text-align: center;
     font-weight: bolder;
+    text-align: left
 }
 
 .datos h2 {
     font-size: 20px;
-    font-family: 'Gabriela', serif;
-    margin-top: 9px
-}
-
-.informacion {
-    padding: 2% 0 2% 0;
-    height: auto;
-    border-radius: 5px;
-    margin: 0% 0% 5% 10%;
-    /* -webkit-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 3px 48px -11px rgba(0, 0, 0, 0.75); */
-    background-color: white;
-    opacity: 0.8;
-    width: 80%;
-    text-align: center;
+    font-family: 'Open sans', sans-serif;
+    text-align: left
 }
 
 .imagen {
@@ -69,14 +71,14 @@
 
 .botonMensaje {
     border-radius: 10px;
-    padding: 12px;
+    padding: 7px;
     border: 2px solid #32936F;
     color: #395E66;
     font-size: 20px;
     font-family: 'Gabriela', serif;
     cursor: pointer;
     background-color: white;
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 .botonMensaje:hover {
@@ -117,7 +119,7 @@ agm-map {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-img {
+.item>img {
     width: 100%;
     height: 100%;
     transition: 0.3s;
@@ -130,7 +132,75 @@ img {
 
 .tarjetaInformacion {
     height: 100%;
-    width: 60vh;
-    border-right: 2px solid #32936F;
+    width: 40%;
     display: inline-block;
 }
+
+.botonUbicacion{
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    outline: none;
+    text-align: left;
+    border: none;   
+    font-family: 'Vollkorn', serif;
+    font-size: 20px;
+
+}
+
+.botonUbicacion:hover{
+    background-color: none;
+   color: #32936F;
+
+}
+
+/*Productor*/
+.Fondo {
+    width: 100%;
+    height: 10vh;
+    background-color: #32936F;
+    background-size: 100%;
+}
+
+.nombrePerfil {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+.fotoPerfil {
+    width: 120px;
+    height: 100px;
+    border-radius: 50px;
+}
+.fotoPerfil>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* transition: linear 500ms;
+  -webkit-transition: linear 500ms; */
+}
+
+.tituloPerfil {
+    font-family: 'Open sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.datosPersonales {
+    font-family: 'Open sans', sans-serif;
+    font-size: 18px;
+}
+
+.background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: block;
+    background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+    width: 100%;
+    height: 100%;
+    filter: blur(18px)
+  
+  }

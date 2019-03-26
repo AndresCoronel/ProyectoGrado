@@ -106,13 +106,13 @@
         <div class="tarjetaOferta" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | paginate: { itemsPerPage: 8, currentPage: p }">
           <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Notebook">
           <div class="descripcionOferta" style="width: 250px">
-            <h1>{{oferta.nombre_producto}}</h1>
-            <p>{{oferta.precio_producto | currency}}</p>
+            <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
+            <p class="precioProducto">{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</p>
+            <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
             <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
           </div>
         </div>
-
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls style="margin-top: 5%; margin-left: 200px" (pageChange)="p = $event"></pagination-controls>
       </div>
 
     <hr>

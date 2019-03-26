@@ -36,6 +36,7 @@ import { ProductorComponent } from './components/productor/productor.component';
 import { ApellidoProductorPipe } from './pipes/productor/apellido-productor.pipe';
 import { SexoProductorPipe } from './pipes/productor/sexo-productor.pipe';
 import { PerfilProductorComponent } from './components/productor/perfil-productor/perfil-productor.component';
+import { VariedadPipe } from './pipes/variedad.pipe';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     ProductorComponent,
     ApellidoProductorPipe,
     SexoProductorPipe,
-    PerfilProductorComponent
+    PerfilProductorComponent,
+    VariedadPipe
 
   
   ],

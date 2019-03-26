@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
 .generalHome {
     height: 100%;
     margin: 0px
@@ -302,4 +305,17 @@ hr {
 
 .botonVerMas:hover {
     background-color: #32936F;
+}
+
+::placeholder{
+    color: black
+}
+.nombreProducto {
+    font-family: 'Vollkorn', serif;
+    font-size: 24px;
+}
+
+.precioProducto {
+    font-family: 'Open sans', sans-serif;
+    font-size: 16px;
 }

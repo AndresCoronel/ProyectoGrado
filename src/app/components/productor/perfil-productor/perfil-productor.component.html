@@ -1,32 +1,58 @@
-<div class="codepen">
+<div class="codepen" style="margin-bottom: 5%;">
   <div class="Fondo"></div>
   <div class="fotoPerfil circulo">
     <span>
-      <img src="https://images.larepublica.co/s3/412/cms/2018/06/05103448/Campesino.jpg" alt="Perfil" />
+      <img class="circulo" src="https://images.larepublica.co/s3/412/cms/2018/06/05103448/Campesino.jpg" alt="Perfil" />
     </span>
   </div>
   <div class="container" style="text-align: center">
-    <h2 class="tituloPerfil">{{productor.nombre_productor}} {{productor.apellido_productor}}</h2>
+    <h2 class="tituloPerfil">{{productor.nombre_productor}} {{productor.apellido_productor}}
+      <button data-tip="Enviar mensaje" class="botonUbicacion" data-toggle="modal" data-target="#ubicacionModal">
+        <mat-icon style="font-size: 40px" matTooltip="Info about the action">chat</mat-icon>
+      </button>
+    </h2>
     <p class="datosPersonales">
       <b>Teléfono: </b>{{productor.telefono_productor}}
       <b>|</b>
       <b>Correo electrónico: </b>{{productor.correo_productor}}
       <b>|</b>
-      <b>Sexo: </b>{{productor.sexo_productor}}
+      <b>
+        <button data-tip="Enviar mensaje" class="botonUbicacion" data-toggle="modal" data-target="#ubicacionModal">
+          <mat-icon style="font-size: 40px" matTooltip="Info about the action">chat</mat-icon></button>
+      </b>
     </p>
   </div>
   <hr>
-  <div style="background: red; width: 100%; height: 100%;">
 
-    <div class="h">
-      <img style="height: 310px; width: 300px; border-radius: 20px" src="./../../../../assets/img/MANGO.jpg" alt="Notebook">
-      <div class="content" style="width: 300px">
-        <h1>Heading</h1>
-        <p>Lorem ipsum..</p>
-        <button class="botonVerMas">Ver más</button>
+  <div class="container" style="margin-top: 3%">
+    <!-- <h2 class="tituloPerfil" style="margin-top:-30px; text-align: center; border-bottom: 2px solid #395E66; width: 20%">Ofertas</h2> -->
+    <div class="row container">
+      <div class="field col-sm-4" style="width: 100%">
+        <input type="text" class="btnFilter" name="nombre_producto" id="nombre_producto" placeholder="">
+        <label for="nombre_producto">Nombre producto</label>
+      </div>
+
+      <div class="field col-sm-4" style="width: 100%">
+        <input type="text" class="btnFilter" name="fecha_recoleccion_oferta" id="fecha_recoleccion_oferta" placeholder="">
+        <label for="fecha_recoleccion_oferta">Fecha</label>
+      </div>
+
+      <div class="field col-sm-4" style="width: 100%">
+        <input class="btnFilter" type="number" name="precio_producto" id="precio_producto" placeholder="">
+        <label for="precio_producto">Precio</label>
       </div>
     </div>
 
-
+    <div class="tarjetaOferta" *ngFor=" let oferta of ofertas">
+      <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg"
+        alt="Notebook">
+      <div class="descripcionOferta" style="width: 250px">
+          <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
+          <p class="precioProducto">{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</p>
+        <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
+        <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
+      </div>
+    </div>
   </div>
+
 </div>

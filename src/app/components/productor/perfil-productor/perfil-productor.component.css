@@ -60,16 +60,21 @@
 }
 
 
-.h {
+
+.tarjetaOferta {
     position: relative;
     max-width: 800px;
     /* Maximum width */
     margin: 0 auto;
     /* Center it */
     border-radius: 20px;
+    display: inline-block;
+    margin-right: 2%;
+    margin-top: 1%;
+    box-shadow: 4px 4px 4px gray;
 }
 
-.content {
+.descripcionOferta {
     position: absolute;
     /* Position the background text */
     bottom: 0;
@@ -83,7 +88,8 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.botonVerMas{
+
+.botonVerMas {
     background: none;
     left: 0;
     border-radius: 10px;
@@ -94,8 +100,140 @@
     font-size: 18px;
     border: 1px solid #32936F;
     outline: 0;
-    
 }
-.botonVerMas:hover{
+
+.botonVerMas:hover {
     background-color: #32936F;
+}
+
+::placeholder{
+    color: black
+}
+.nombreProducto {
+    font-family: 'Vollkorn', serif;
+    font-size: 20px;
+}
+
+.precioProducto {
+    font-family: 'Open sans', sans-serif;
+    font-size: 16px;
+}
+
+
+   
+  .field {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+  }
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the 
+  * pesky delay.
+  */
+  label, input {
+    transition: all 0.2s;
+  }
+  
+  .btnFilter {
+    font-size: 18px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    transition: all 0.2s;
+  }
+  
+  .btnFilter:focus {
+    outline: 0;
+    border-bottom: 2px solid #32936F;
+  }
+ 
+  .btnFilter:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+  }
+  
+  .btnFilter:not(:placeholder-shown) + label,
+  .btnFilter:focus + label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+    color: #32936F;
+    font-size: 16px;
+}
+
+.botonUbicacion{
+    background: none;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+    border: none;   
+    font-family: 'Vollkorn', serif;
+    font-size: 18px;
+
+}
+.botonUbicacion:hover{
+    color: #32936F;
+}
+[data-tip] {
+    position:relative;
+
+}
+[data-tip]:before {
+    content:'';
+    /* hides the tooltip when not hovered */
+    display:none;
+    content:'';
+    display:none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #1a1a1a;
+    position:absolute;
+    top:30px;
+    left:35px;
+    z-index:8;
+    font-size:0;
+    line-height:0;
+    width:0;
+    height:0;
+    position:absolute;
+    top:30px;
+    left:35px;
+    z-index:8;
+    font-size:0;
+    line-height:0;
+    width:0;
+    height:0;
+}
+[data-tip]:after {
+    display:none;
+    content:attr(data-tip);
+    position:absolute;
+    top:35px;
+    left:0px;
+    padding:5px 8px;
+    background:#1a1a1a;
+    color:#fff;
+    z-index:9;
+    font-size: 14px;
+    height:30px;
+    line-height:18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    white-space:nowrap;
+    word-wrap:normal;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+    display:block;
 }
