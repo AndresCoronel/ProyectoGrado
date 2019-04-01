@@ -43,3 +43,52 @@ h1 {
 }
 
 
+.field {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+  }
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the 
+  * pesky delay.
+  */
+  label, input {
+    transition: all 0.2s;
+  }
+  
+  .btnFilter {
+    font-size: 18px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    transition: all 0.2s;
+  }
+  
+  .btnFilter:focus {
+    outline: 0;
+    border-bottom: 2px solid #32936F;
+  }
+ 
+  .btnFilter:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+  }
+  
+  .btnFilter:not(:placeholder-shown) + label,
+  .btnFilter:focus + label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+    color: #32936F;
+    font-size: 16px;
+}

@@ -28,27 +28,27 @@
     <!-- <h2 class="tituloPerfil" style="margin-top:-30px; text-align: center; border-bottom: 2px solid #395E66; width: 20%">Ofertas</h2> -->
     <div class="row container">
       <div class="field col-sm-4" style="width: 100%">
-        <input type="text" class="btnFilter" name="nombre_producto" id="nombre_producto" placeholder="">
+        <input type="text" class="btnFilter" name="nombre_producto" [(ngModel)]="pro" id="nombre_producto" placeholder="">
         <label for="nombre_producto">Nombre producto</label>
       </div>
 
       <div class="field col-sm-4" style="width: 100%">
-        <input type="text" class="btnFilter" name="fecha_recoleccion_oferta" id="fecha_recoleccion_oferta" placeholder="">
+        <input type="text" class="btnFilter" name="fecha_recoleccion_oferta" [(ngModel)]="fec" id="fecha_recoleccion_oferta" placeholder="">
         <label for="fecha_recoleccion_oferta">Fecha</label>
       </div>
 
       <div class="field col-sm-4" style="width: 100%">
-        <input class="btnFilter" type="number" name="precio_producto" id="precio_producto" placeholder="">
+        <input class="btnFilter" type="number" name="precio_producto" [(ngModel)]="pre" id="precio_producto" placeholder="">
         <label for="precio_producto">Precio</label>
       </div>
     </div>
 
-    <div class="tarjetaOferta" *ngFor=" let oferta of ofertas">
+    <div class="tarjetaOferta" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | variedad:vari ">
       <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg"
         alt="Notebook">
       <div class="descripcionOferta" style="width: 250px">
           <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
-          <p class="precioProducto">{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</p>
+          <p class="precioProducto">{{oferta.cantidadproducto}} {{oferta.unidad_medida_producto}}</p>
         <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
         <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
       </div>

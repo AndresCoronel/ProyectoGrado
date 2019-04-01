@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Bitter');
 @import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+
 .generalHome {
     height: 100%;
     margin: 0px
@@ -105,18 +107,24 @@ hr {
     height: 100%;
     padding: 1%;
     margin: 1% 5% auto 5%;
+    background: none;
 }
 
 .tituloDos {
-    border-right: 2px solid #395E66;
-    width: 20%;
+    border-right: 3px solid #395E66;
     display: inline-block;
     margin: auto 1% auto 3%;
+    font-family: 'Vollkorn', serif;
+    font-weight: bolder;
+    display: inline-block;
+    font-size: 40px;
+    padding-right: 10px;
 }
 
 .subtitulo {
-    width: 30%;
-    display: inline-block
+    font-family: 'Open sans', sans-serif;
+    display: inline-block;
+    font-size: 30px;
 }
 
 .contenedorSecundario {
@@ -160,12 +168,9 @@ hr {
     cursor: pointer;
     box-shadow: 4px 4px 4px gray;
     border-radius: 5px;
+    color: white;
 }
 
-.botonTestimonio:hover {
-    box-shadow: 0px 3px 0px white;
-    color: white
-}
 
 /* .botonFiltro:focus {
     outline: none;
@@ -206,14 +211,40 @@ hr {
     font-weight: bold;
 }
 
-.titulo {
+.tituloTestimonio {
+    width: 25%;
     padding-bottom: 10px;
     margin: 2% 0px 0% 0%;
-    border-bottom: 3px solid #395E66;
-    font-family: 'Lobster', cursive;
-    font-size: 30px;
+    border-bottom: 3px solid #395E66;;
     text-align: center;
+    display: inline-block;
+    font-family: 'Vollkorn', serif;
+    font-weight: bolder;
+    font-size: 40px;
 }
+.tituloZonasProductoras {
+    width: 80%;
+    padding-bottom: 10px;
+    margin: 2% 0px 0% 0%;
+    border-bottom: 3px solid #395E66;;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Vollkorn', serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.tituloDatosCuriosos {
+    width: 80%;
+    padding-bottom: 10px;
+    margin: 2% 0px 0% 0%;
+    border-bottom: 3px solid #395E66;;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Vollkorn', serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
 
 .containerXd {
     left: 0;
@@ -247,13 +278,6 @@ hr {
 
 .barraBusquedaFitros:focus {
     outline: 0px;
-}
-
-.button {
-    background-color: blue;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
 }
 
 .active {
@@ -312,7 +336,7 @@ hr {
 }
 .nombreProducto {
     font-family: 'Vollkorn', serif;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .precioProducto {

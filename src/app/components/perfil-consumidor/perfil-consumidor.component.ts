@@ -26,103 +26,8 @@ export class PerfilConsumidorComponent implements OnInit {
   private oferta: Oferta = new Oferta();
   consumidores: Consumidor[];
   private consumidor: Consumidor = new Consumidor();
-  demandass: Demanda[];
+  demandas: Demanda[];
   private demanda: Demanda = new Demanda();
-  demandas: Demandas[] = [
-    {
-      name: 'Demanda 1',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Demanda 2',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Demanda 3',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 4',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 5',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 6',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 7',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 8',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 9',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Demanda 10',
-      updated: new Date('1/28/16'),
-    }
-  ];
-
-  ofertas1: Ofertas[] = [
-    {
-      nombre: 'Demanda 1',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 2',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 3',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 4',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 5',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 6',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 6',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 7',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 8',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    },
-    {
-      nombre: 'Demanda 9',
-      productor: 'Edwin Guerrero',
-      descripcion: 'Esta es la descripción temporal para todas las ofertas, se espera que el maximo de esta descripción sea de 120 palabras para mantener la estrucutra de las tarjetas',
-    }
-  ];
 
   constructor(private demandaService: DemandaService, private router: Router,
     private activatedRoute: ActivatedRoute, private consumidorService: ConsumidorService,
@@ -136,7 +41,7 @@ export class PerfilConsumidorComponent implements OnInit {
       (consumidores) => { this.consumidores = consumidores }
     );
     this.demandaService.getDemandas().subscribe(
-      (demandass) => { this.demandass = demandass }
+      (demandas) => { this.demandas = demandas }
     );
   }
 

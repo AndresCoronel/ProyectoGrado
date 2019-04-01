@@ -1,16 +1,25 @@
-<div class="container" style="text-align: center">
+<div class="container" >
   <h2>Productores</h2>
   <div style=" width: 100%; margin: 5% 0 5% 0">
+    <div class="row container">
+      <div class="field col-sm-4" style="width: 100%">
+        <input type="text" class="btnFilter" name="filtroProductor" [(ngModel)]="term" id="filtroProductor" placeholder="">
+        <label for="filtroProductor">Nombre productor</label>
+      </div>
 
-    <input type="search" name="term" [(ngModel)]="term" placeholder="Nombre del productor" title="Search" class="campoBusqueda" style="display: inline-block"/>
-    <input type="search" name="ape" [(ngModel)]="ape" placeholder="Apellido del productor" class="campoBusqueda" style="display: inline-block; margin-left: 2%"/>
-
-    <select aria-placeholder="sexo" class="custom-select" style="display: inline-block; width: 10%; margin-left: 2%" name="sex" [(ngModel)]="sex">
+      <div class="field col-sm-4" style="width: 100%">
+        <input type="text" class="btnFilter" name="apellido_productor" [(ngModel)]="ape" id="apellido_productor" placeholder="">
+        <label for="apellido_productor">Apellido productor</label>
+      </div>
+    
+    <select aria-placeholder="sexo" class="custom-select col-sm-2"  style="display: inline-block; width: 10%; margin-left: 2%" name="sex"
+      [(ngModel)]="sex">
       <option selected value="">Todos</option>
       <option value="Hombre">Hombre</option>
       <option value="Mujer">Mujer</option>
     </select>
   </div>
+</div>
 
   <div style="width: 100%; height: 100%;" class="container" *ngFor="let productor of productores | filtroProductor:term | apellidoProductor:ape | sexoProductor:sex">
 

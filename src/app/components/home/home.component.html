@@ -43,10 +43,9 @@
 
   <div class="contenedorFraseInicio">
 
-    <h1 style="width: 40%; padding-bottom: 20px; margin-top: -20px;  border-bottom: 1px solid #395E66">Busca los productos por:</h1>
-
+    <hr>
     <div class="container">
-      <button type="button" onclick="document.location.reload()" style="display: inline-block; margin: 1% 1% 1% 1%" class="botonFiltro">
+      <button type="button" onclick="document.location.reload()" style="display: inline-block;" class="botonFiltro">
         <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-globe"></i>Ver todas</button>
 
       <div class="btn-group" style="margin-left: 20px;">
@@ -91,7 +90,7 @@
 
       <div class="btn-group" style="margin-left: 20px;">
           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
-            <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-balance-scale"></i>Variedad</button>
+            <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-boxes"></i>Variedad</button>
           <ul class="dropdown-menu" role="menu">
             <input placeholder="variedad..." class="barraBusquedaFiltros" name="vari" [(ngModel)]="vari">
           </ul>
@@ -103,8 +102,8 @@
     <hr>
 
 
-    <div style="margin: 1% auto auto 10%; width: 80%;">
-      <h2 class="tituloDos">Marketplace</h2>
+    <div style="margin: 1% 0 2% 0; width: 100%; text-align: center ">
+      <h2 class="tituloDos">Mercado</h2>
       <h3 class="subtitulo">Productos ofertados</h3>
     </div>
 
@@ -115,7 +114,7 @@
           <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Notebook">
           <div class="descripcionOferta" style="width: 250px">
             <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
-            <p class="precioProducto">{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</p>
+            <p class="precioProducto">{{oferta.cantidadproducto}} {{oferta.unidad_medida_producto}}</p>
             <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
             <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
           </div>
@@ -126,8 +125,8 @@
     <hr>
 
 
-    <div>
-      <h1 style="margin-bottom: 30px;" class="titulo">TESTIMONIOS</h1>
+    <div style="text-align: center">
+      <h1 style="margin-bottom: 30px;" class="tituloTestimonio">Experiencias</h1>
     </div>
     <div style="height: 60vh;">
       <div class="testimonio" *ngFor="let testimonio of testimonios ">
@@ -153,19 +152,19 @@
 
     <div style="height: 500px" class="row">
 
-      <div class="col-sm-8" style="border-right: 1px solid #395E66;height: 100%;">
-        <h2 class="titulo">Zonas mas productoras del pais</h2>
+      <div class="col-sm-8" style="text-align: center; border-right: 1px solid #395E66;height: 100%;">
+        <h2 class="tituloZonasProductoras">Zonas más productoras del país</h2>
         <app-grafico></app-grafico>
       </div>
 
-      <div class="col-sm-4" style="height: 100%;margin-top: 7px">
-        <h2 class="titulo">Preguntas frecuentes</h2>
+      <div class="col-sm-4" style="height: 100%;margin-top: 7px; text-align: center">
+        <h2 class="tituloDatosCuriosos">Datos curiosos</h2>
         <div id="accordion" role="tablist">
           <div class="card" style="margin-top:  2% ; margin-left: 2%; margin-right: 2%">
             <div class="card-header" role="tab" id="headingOne">
               <h5 class="mb-0">
                 <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Pregunta 1
+                  Dato 1
                 </a>
               </h5>
             </div>
@@ -181,7 +180,7 @@
             <div class="card-header" role="tab" id="headingTwo">
               <h5 class="mb-0">
                 <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Pregunta 2
+                  Dato 2
                 </a>
               </h5>
             </div>
@@ -196,7 +195,7 @@
             <div class="card-header" role="tab" id="headingThree">
               <h5 class="mb-0">
                 <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  pregunta 3
+                  Dato 3
                 </a>
               </h5>
             </div>

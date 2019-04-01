@@ -10,7 +10,7 @@ export class CantidadPipe implements PipeTransform {
     if(can === undefined) return cantidades;
     //llenar el filtro nuevo
     return cantidades.filter(function(cantidad){
-      return cantidad.cantidad_producto.toFixed().includes(can.toString());
+      return cantidad.cantidadproducto.toFixed().includes(can.toString());
     });
   }
 }

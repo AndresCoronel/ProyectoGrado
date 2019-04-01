@@ -3,7 +3,7 @@ export class Oferta {
     id_oferta: number;
     nombre_producto: string;
     unidad_medida_producto: string;
-    cantidad_producto: number;
+    cantidadproducto: number;
     precio_producto: number;
     variedad_producto: string;
     descripcion_producto: string;

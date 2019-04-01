@@ -9,6 +9,7 @@ export class OfertaService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   private urlEndPoint: string = 'http://localhost:8080/api/ofertas';
   private urlEndPoint2: string = 'http://localhost:8080/api/ofertas/productor';
+  private urlEndPoint3: string = 'http://localhost:8080/api/ofertas/demanda';
    
   constructor(private http: HttpClient) { }
 
@@ -34,7 +35,9 @@ export class OfertaService {
     return this.http.get<Oferta[]>(`${this.urlEndPoint2}/${productor}`);
   }
  
-
+  getOfertaDemanda(demanda: number): Observable<Oferta[]>{
+    return this.http.get<Oferta[]>(`${this.urlEndPoint3}/${demanda}`);
+  }
 
 
 }
