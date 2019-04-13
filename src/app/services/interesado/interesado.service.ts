@@ -15,11 +15,13 @@ export class InteresadoService {
   getInteresados(): Observable<Interesado[]>{
     return this.http.get<Interesado[]>(this.urlEndPoint);
    }
-   crearInteresado(interesado: Interesado) : Observable<Interesado>{
+   crearInteresado(interesado: Interesado, consumidor:number, oferta: number) : Observable<Interesado>{
     console.log(interesado);
-    return this.http.post<Interesado>(this.urlEndPoint, interesado, {headers: this.httpHeaders});
+    return this.http.post<Interesado>(`${this.urlEndPoint}/post/${consumidor}/${oferta}`, interesado, {headers: this.httpHeaders});
   }
-
+  getOfertaInteres(consumidor: number): Observable<Interesado[]>{
+    return this.http.get<Interesado[]>(`${this.urlEndPoint}/consumidor/${consumidor}`);
+  }
   getInteresado(id_interesado): Observable<Interesado> {
     return this.http.get<Interesado>(`${this.urlEndPoint}/${id_interesado}`);
   }

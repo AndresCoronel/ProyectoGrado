@@ -36,13 +36,12 @@ export class PerfilProductorComponent implements OnInit {
 
   cargarOfertaProductor(): void {
     this.activatedRoute.params.subscribe(params => {
-      console.log("en el metodo mother fuck")
       let cedula_productor = params['cedula_productor']
-      console.log("epaleeeeeeeeeeeeeeeeeee**21122112***********************", cedula_productor)
       if (cedula_productor) {
         console.log("holis")
         this.ofertaService.getOfertaProductor(cedula_productor).subscribe(
           (ofertas) => { this.ofertas = ofertas
+            
             console.log(ofertas[1]) }
          
         )

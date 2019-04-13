@@ -3,7 +3,7 @@ export class Oferta {
     id_oferta: number;
     nombre_producto: string;
     unidad_medida_producto: string;
-    cantidadproducto: number;
+    cantidad_producto: number;
     precio_producto: number;
     variedad_producto: string;
     descripcion_producto: string;
@@ -14,5 +14,7 @@ export class Oferta {
     fecha_recoleccion_oferta: string;
     cedula_productor: number;
     create_at: string;
+    ciudad_oferta: string;
+    departamento_oferta: string;
 
 }

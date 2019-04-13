@@ -63,6 +63,7 @@
           <input placeholder="Producto" class="barraBusquedaFiltros" name="pro" [(ngModel)]="pro">
         </ul>
       </div>
+      
 
       <div class="btn-group" style="margin-left: 20px;">
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
@@ -89,12 +90,21 @@
       </div>
 
       <div class="btn-group" style="margin-left: 20px;">
-          <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
-            <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-boxes"></i>Variedad</button>
-          <ul class="dropdown-menu" role="menu">
-            <input placeholder="variedad..." class="barraBusquedaFiltros" name="vari" [(ngModel)]="vari">
-          </ul>
-        </div>
+        <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle botonFiltro">
+          <i style="font-size:25px; min-width: 10%; margin-right: 10px" class="fa fa-boxes"></i>Variedad</button>
+        <ul class="dropdown-menu" role="menu">
+          <input placeholder="variedad..." class="barraBusquedaFiltros" name="vari" [(ngModel)]="vari">
+        </ul>
+      </div>
+
+      <div style="width: 100%; height: 100%; margin-top: 10px">
+        <input class="tarjetasFiltros" *ngIf="zon" disabled="true" [(ngModel)]="zon">
+        <input class="tarjetasFiltros" *ngIf="pro" disabled="true" [(ngModel)]="pro">
+        <input class="tarjetasFiltros" *ngIf="fec" disabled="true" [(ngModel)]="fec">
+        <input class="tarjetasFiltros" *ngIf="can" disabled="true" [(ngModel)]="can">
+        <input class="tarjetasFiltros" *ngIf="pre" disabled="true" [(ngModel)]="pre">
+        <input class="tarjetasFiltros" *ngIf="vari" disabled="true" [(ngModel)]="vari">
+      </div>
 
     </div>
 
@@ -108,19 +118,20 @@
     </div>
 
     <!-- Ofertas -->
-      <div class="container">
+    <div class="container">
 
-        <div class="tarjetaOferta" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | variedad:vari | paginate: { itemsPerPage: 8, currentPage: p }">
-          <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Notebook">
-          <div class="descripcionOferta" style="width: 250px">
-            <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
-            <p class="precioProducto">{{oferta.cantidadproducto}} {{oferta.unidad_medida_producto}}</p>
-            <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
-            <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
-          </div>
+      <div class="tarjetaOferta" *ngFor=" let oferta of ofertas | filtroProductor:term  | cantidad:can | producto:pro | zona:zon | fecha:fec | precio:pre | variedad:vari | paginate: { itemsPerPage: 8, currentPage: p }">
+        <img style="height: 310px; width: 250px; border-radius: 20px" src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="Notebook">
+        <div class="descripcionOferta" style="width: 250px">
+          <h2 class="nombreProducto">{{oferta.nombre_producto}} | {{oferta.variedad_producto}}</h2>
+          <p class="precioProducto">{{oferta.cantidad_producto}} {{oferta.unidad_medida_producto}}</p>
+          <p class="precioProducto">{{oferta.precio_producto | currency}}</p>
+          <button class="botonVerMas" [routerLink]="['/oferta', oferta.id_oferta]">Ver más</button>
+          <button class="botonVerMas" (click)="crearInteresado(oferta.id_oferta)">Interesado</button>
         </div>
-        <pagination-controls style="margin-top: 5%; margin-left: 200px" (pageChange)="p = $event"></pagination-controls>
       </div>
+      <pagination-controls style="margin-top: 5%; margin-left: 200px" (pageChange)="p = $event"></pagination-controls>
+    </div>
 
     <hr>
 

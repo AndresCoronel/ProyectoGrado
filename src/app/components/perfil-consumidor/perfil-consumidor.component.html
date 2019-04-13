@@ -2,10 +2,10 @@
 
   <div class="row" style="margin: 2% 5% 0 10%;">
    
-    <div class="perfil col-sm-3" *ngFor="let consumidor of consumidores">
+    <div class="perfil col-sm-3">
       
       <div class="imagenPerfil">
-        <img src="http://www.emprendedores.es/var/em/storage/images/gestion/comprador_actual/1041741-3-esl-ES/radiografia_del_comprador_actual_el_consumidor_inteligente_ampliacion.jpg" alt="men" style="width: 100%; height:100%; border-radius: 5px">
+        <img src="https://cdn.icon-icons.com/icons2/827/PNG/512/user_icon-icons.com_66546.png" alt="men" style="width: 100%; height:100%; border-radius: 5px">
       </div>
 
       <div class="nombrePerfil">
@@ -57,7 +57,7 @@
           <mat-tab label="Mis Demandas">
             <div class="contenido">
               <mat-list style="width: 100%; ">
-                <mat-list-item *ngFor="let demanda of demandass">
+                <mat-list-item *ngFor="let demanda of demandas">
                   
                   <div class="imagenLista">
                     <img mat-line src="./../../../assets/img/iconoSemilla.png" style="width: 70px; height: 80px;">
@@ -65,7 +65,7 @@
 
                   <div class="infoLista">
                     <h4 mat-line>{{demanda.nombre_producto}}</h4>
-                    <p mat-line>Cantidad: {{demanda.cantidadproducto}} {{demanda.medida_producto}} </p>
+                    <p mat-line>Cantidad: {{demanda.cantidad_producto}} {{demanda.medida_producto}} </p>
                     <hr mat-line />
                   </div>
 
@@ -78,22 +78,22 @@
           <mat-tab label="Ofertas de Interes">
             <div class="contenido">
               <ul style="width: 100%; height: 100%;">
-                <li *ngFor="let oferta of ofertas" class="cartaOferta">
+                <li *ngFor="let interesado of interesados" class="cartaOferta">
                   <mat-card class="carta">
                     <mat-card-header class="headerCartaOferta">
                       <div mat-card-avatar class="headerCarta"></div>
-                      <mat-card-title style="margin-bottom: 3px;font-size:18px; font-family: 'Gabriela', serif; margin-top:5px">{{oferta.nombre_producto}}</mat-card-title>
-                      <mat-card-subtitle style="font-family: 'Philosopher', sans-serif;font-size: 16px">{{oferta.productor.nombre_productor}} {{oferta.productor.apellido_productor}}</mat-card-subtitle>
+                      <mat-card-title style="margin-bottom: 3px;font-size:18px; font-family: 'Gabriela', serif; margin-top:5px">{{interesado.oferta.nombre_producto}}</mat-card-title>
+                      <mat-card-subtitle style="font-family: 'Philosopher', sans-serif;font-size: 16px">{{interesado.oferta.productor.nombre_productor}}</mat-card-subtitle>
                     </mat-card-header>
-                    <img mat-card-image src="./../../../assets/img/{{oferta.nombre_producto}}.jpg" alt="imgOferta" class="imagenOferta">
+                    <img mat-card-image src="./../../../assets/img/{{interesado.oferta.nombre_producto}}.jpg" alt="imgOferta" class="imagenOferta">
                     
                     <mat-card-content>
                       <p class="descripcion">
-                        {{oferta.descripcion_producto}}
+                        {{interesado.oferta.descripcion_producto}}
                       </p>
                     </mat-card-content>
                     <mat-card-actions>
-                      <button mat-button style="background-color: #32936F; bottom: 15px; margin-left: 15px" [routerLink]="['/oferta', oferta.id_oferta]">VER</button>
+                      <button mat-button style="background-color: #32936F; bottom: 15px; margin-left: 15px" [routerLink]="['/oferta', interesado.oferta.id_oferta]">VER</button>
                       <button mat-button style="background-color: #FB5A5A; bottom: 15px">ELIMINAR</button>
                     </mat-card-actions>
                   </mat-card>

@@ -1,3 +1,40 @@
-<p>
-  plan-compra works!
-</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="demandas row" *ngFor="let demanda of demandas" [routerLink]="['/planCompra', demanda.id_demanda]">      
+      <div class="col-sm-4" style="height: 90px; width: 80px; background-color: #32936F; padding: 1px; border-radius: 50%;">
+        <img style="height: 100%; width: 100%; border-radius: 50%" src="../../../assets/img/{{demanda.nombre_producto}}.jpg">
+      </div>
+      <div class="col-sm-7">
+        <p > {{demanda.nombre_producto}} </p>
+        <p> {{demanda.ciudad_demanda}} {{demanda.create_at}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="CourseCategories" data-reactid="16">
+  <div class="CourseCategories-container" data-reactid="17">
+    <div class="CourseCategories-title" data-reactid="18">
+      <h2 data-reactid="19">
+        <span data-reactid="20">Mis demandas</span>
+      </h2>
+    </div>
+    <div class="CourseCategories-content"  data-reactid="21">
+      <a *ngFor="let demanda of demandas" [routerLink]="['/planCompra', demanda.id_demanda]" class="CourseCategories-item" style="background-image:url(https://static.platzi.com/media/categories-banner/desarrolloweb.jpg);"
+        data-reactid="22">
+       
+        <div class="CourseCategories-courses" data-reactid="23" style="position: relative;" >
+          <h2 data-reactid="24">{{demanda.nombre_producto}}</h2>
+          <span data-reactid="25">Fecha de publicación: {{demanda.create_at}}</span>
+        </div>
+        <div class="CourseCategories-arrow" data-reactid="26">
+          <div class="CourseCategories-arrowRight" data-reactid="27"></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>

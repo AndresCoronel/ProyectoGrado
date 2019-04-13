@@ -11,6 +11,7 @@ import { Productor } from '../../models/productor';
 import { ProductorService } from '../../services/productor/productor.service';
 import { TestimonioService } from '../../services/testimonio/testimonio.service';
 import { Testimonio } from '../../models/testimonio';
+import { ConsumidorService } from '../../services/consumidor/consumidor.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,6 +20,8 @@ import { Testimonio } from '../../models/testimonio';
 export class HomeComponent implements OnInit {
   
   h: string = "./../../../assets/img/PAPA.jpg"
+
+  
   
   testimonios: Testimonio[];
   private testimonio: Testimonio= new Testimonio();
@@ -31,15 +34,21 @@ export class HomeComponent implements OnInit {
   
   productores: Productor[];
   private productor: Productor = new Productor();
+
+  consumidor: Consumidor;
   
   p: number = 1;
   o: number = 1;
   
-  constructor(private ofertaService: OfertaService, private interesadoService: InteresadoService, 
+  constructor(private ofertaService: OfertaService,private consumidorService: ConsumidorService, private interesadoService: InteresadoService, 
     private testimonioService: TestimonioService, private productorService: ProductorService, 
     private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.consumidor=this.consumidorService.getUserLoggedIn();
+    console.log("usuario",this.consumidor)
+
     //MANTENER ACTIVO LOS BOTONES
     $(function() {
       var botones = $(".container button");
@@ -67,14 +76,14 @@ export class HomeComponent implements OnInit {
 
   }
   //INTERESADOS
-  crearInteresado(oferta: Oferta) {
-    console.log(oferta)
-    this.interesadoService.crearInteresado(this.interesado)
-      .subscribe(interesado => {
-        //this.router.navigate(['/principal'])
-        swal("Marcado Correctamente", "success");
-        this.interesado = new Interesado();
-      })
+  crearInteresado(oferta: number) {
+    console.log("sisas mijas",oferta)
+    this.interesadoService.crearInteresado(this.interesado,this.consumidor.cedula_consumidor, oferta).subscribe(interesado => {
+      swal("Marcado como interesado",  "success");
+      this.router.navigate(['/principal'])
+      this.interesado = new Interesado();
+    })
+   
   }
 
   //OFERTAS

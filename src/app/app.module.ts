@@ -38,6 +38,7 @@ import { SexoProductorPipe } from './pipes/productor/sexo-productor.pipe';
 import { PerfilProductorComponent } from './components/productor/perfil-productor/perfil-productor.component';
 import { VariedadPipe } from './pipes/variedad.pipe';
 import { PlanCompraComponent } from './components/plan-compra/plan-compra.component';
+import { OfertasDemandaComponent } from './components/plan-compra/ofertas-demanda/ofertas-demanda.component';
 
 const appRoutes: Routes = [
   { path: 'perfil-consumidor', component: PerfilConsumidorComponent },
@@ -51,7 +52,9 @@ const appRoutes: Routes = [
   { path: 'registro/form/:cedula_consumidor', component: FormComponent },
   { path: 'productor', component: ProductorComponent },
   { path: 'productor/:cedula_productor', component: PerfilProductorComponent },
-  { path: 'planCompra', component: PlanCompraComponent }
+  { path: 'planCompra', component: PlanCompraComponent },
+  { path: 'planCompra/:id_demanda', component: OfertasDemandaComponent },
+  {path: 'principal/:contrasenia_consumidor/:correo_consumidor', component: HomeComponent}
 ]
 @NgModule({
   declarations: [
@@ -79,7 +82,8 @@ const appRoutes: Routes = [
     SexoProductorPipe,
     PerfilProductorComponent,
     VariedadPipe,
-    PlanCompraComponent
+    PlanCompraComponent,
+    OfertasDemandaComponent
 
   
   ],

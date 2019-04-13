@@ -1,0 +1,124 @@
+.demandas {
+    width: 30%;
+    border-radius: 5px;
+    background-color: #fff;
+    border: solid 1px #dbdbe2;
+    margin: 1%;
+    border-bottom-color: #32936F;
+    border-bottom-width: 1px;
+    border-bottom-width: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    cursor: pointer;
+}
+.demandas:hover{
+    box-shadow: 5px 5px 5px gray;
+}
+
+
+.CourseCategories-container {
+
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+}
+.CourseCategories-title {
+
+    margin-bottom: 5px;
+
+}
+.CourseCategories-title h2 {
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.92;
+    font-family: 'cooper_hewittmedium';
+
+}
+.CourseCategories-content {
+    display: grid;
+    grid-row-gap: 12px;
+
+}
+.CourseCategories-content {
+
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+        row-gap: 1rem;
+    grid-row-gap: 1.5rem;
+
+}
+.CourseCategories-item {
+
+    padding: 18px 16px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+}
+.CourseCategories-item h2 {
+
+    font-size: 24px;
+    line-height: 1.17;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 1px 10px rgba(0,0,0,0.12), 0 4px 5px rgba(0,0,0,0.14);
+    font-weight: bold;
+    font-family: 'cooper_hewittmedium';
+    margin-bottom: 2px;
+
+}
+.CourseCategories-item span {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+.CourseCategories-arrowRight {
+
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+}
+
+
+
+.clase{
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background-image: linear-gradient(red, yellow);
+}

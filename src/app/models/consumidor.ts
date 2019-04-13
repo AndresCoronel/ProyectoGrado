@@ -7,6 +7,5 @@ export class Consumidor {
     telefono_consumidor: number;
     correo_consumidor: string;
     contrasenia_consumidor: string;
-    username: string;
 
 }

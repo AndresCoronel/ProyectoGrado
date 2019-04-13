@@ -1,22 +1,25 @@
 <mat-toolbar class="nav">
     <mat-toolbar-row>
       <span class="icono" onclick="location.href='/principal'"></span>
-      <span onclick="location.href='/principal'" style="margin-left: -5px">SINA</span>
-      <button mat-button style="margin-left: 60px" onclick="location.href='/demanda'"
-      class="btnOpcion" *ngIf="visible == true"><mat-icon style="margin-right: 5px" >library_add</mat-icon >Publicar Demanda</button>
-      <button mat-button class="btnOpcion" onclick="location.href='/planCompra'" *ngIf="visible == true"><mat-icon style="margin-right: 5px">add_shopping_cart</mat-icon>Plan De Compra</button>
-      <button mat-button class="btnOpcion" onclick="location.href='/productor'" ><mat-icon style="margin-right: 5px" >supervised_user_circle</mat-icon>Productores</button>
-      <button mat-button class="btnOpcion" ><mat-icon style="margin-right: 5px" >chat</mat-icon>Chat</button>
+      <span onclick="location.href='/principal'" style="margin-left: -5px">SINA {{consumidor.nombre_consumidor}}</span>
+      <button mat-button style="margin-left: 60px" onclick="location.href='/demanda'" *ngIf="consumidor"
+      class="btnOpcion" ><mat-icon style="margin-right: 5px" >library_add</mat-icon >Publicar Demanda </button>
+      <button mat-button class="btnOpcion" onclick="location.href='/planCompra'" *ngIf="consumidor"><mat-icon style="margin-right: 5px">add_shopping_cart</mat-icon>Plan De Compra</button>
+      <button mat-button class="btnOpcion" onclick="location.href='/productor'" *ngIf="consumidor"><mat-icon style="margin-right: 5px" >supervised_user_circle</mat-icon>Productores</button>
+      <button mat-button class="btnOpcion" *ngIf="consumidor"><mat-icon style="margin-right: 5px" >chat</mat-icon>Chat</button>
       <button mat-button class="btnOpcion" ><mat-icon style="margin-right: 5px" >spa</mat-icon>Acerca De Nosotros</button>
-      <span class="example-spacer"></span>
-        <button mat-mini-fab [matMenuTriggerFor]="menu" class="btnMenu">
+      <span class="example-spacer" ></span>
+        <button mat-mini-fab [matMenuTriggerFor]="menu" class="btnMenu" *ngIf="consumidor">
             <mat-icon>toc</mat-icon>
         </button>
-        <mat-menu #menu="matMenu" class="menu">
+        <mat-menu #menu="matMenu" class="menu" >
           <button mat-menu-item onclick="location.href='/perfil-consumidor'"><mat-icon>perm_identity</mat-icon>Perfil</button>
-          <button mat-menu-item><mat-icon>search</mat-icon>Ayuda</button>
+          <button mat-menu-item ><mat-icon>search</mat-icon>Ayuda</button>
           <button mat-menu-item><mat-icon>build</mat-icon>Configuración</button>
-          <button mat-menu-item><mat-icon>close</mat-icon>Cerrar Sesión</button>
+          <button mat-menu-item (click)="cerrarSesion()" onclick="location.href='/'" ><mat-icon>close</mat-icon>Cerrar Sesión</button>
+          <div *ngIf="consumidor">
+            <p>{{consumidor.correo_consumidor}}</p>
+          </div>
         </mat-menu>
     </mat-toolbar-row>
   </mat-toolbar>

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Bitter');
-@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
 .tarjetaOferta {
     position: relative;
     max-width: 800px;
@@ -46,10 +44,9 @@
     background-color: #32936F;
 }
 
-::placeholder {
+::placeholder{
     color: black
 }
-
 .nombreProducto {
     font-family: 'Vollkorn', serif;
     font-size: 20px;

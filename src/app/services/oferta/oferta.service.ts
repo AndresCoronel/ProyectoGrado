@@ -36,8 +36,15 @@ export class OfertaService {
   }
  
   getOfertaDemanda(demanda: number): Observable<Oferta[]>{
-    return this.http.get<Oferta[]>(`${this.urlEndPoint3}/${demanda}`);
+    return this.http.get<Oferta[]>(`${this.urlEndPoint}/demanda/exacto/${demanda}`);
   }
+  getOfertaDemandaMenores(demanda: number): Observable<Oferta[]>{
+    return this.http.get<Oferta[]>(`${this.urlEndPoint}/demanda/menores/${demanda}`);
+  }
+  getCantidadOfertaDemanda(demanda: number): Observable<Oferta[]>{
+    return this.http.get<Oferta[]>(`${this.urlEndPoint}/demanda/cantidad/${demanda}`);
+  }
+  
 
 
 }

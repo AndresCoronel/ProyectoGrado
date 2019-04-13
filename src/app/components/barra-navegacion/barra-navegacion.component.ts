@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Consumidor } from '../../models/consumidor';
+import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ConsumidorService } from '../../services/consumidor/consumidor.service';
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -8,12 +11,24 @@ import { Component, OnInit } from '@angular/core';
 export class BarraNavegacionComponent implements OnInit {
   visible: boolean= true;
   vis: string;
-  constructor() { }
+  errorMessage: string;
+  consumidor: Consumidor;
+  constructor(private router: Router, private consumidorService: ConsumidorService,
+    private activatedRoute: ActivatedRoute) { }
+
+
   ngOnInit() {
+    
+    this.consumidor=this.consumidorService.getUserLoggedIn();
   }
 
-  cambiarEstado(){
-    console.log("cambiar")
+
+  cerrarSesion(){
+    console.log("cerrar")
+    this.consumidorService.setUserLoggedOut();
+
+
   }
+ 
 
 }

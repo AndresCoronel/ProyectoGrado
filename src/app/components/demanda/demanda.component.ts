@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { DemandaService } from '../../services/demanda/demanda.service';
 import swal from 'sweetalert2'
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Consumidor } from '../../models/consumidor';
+import { ConsumidorService } from '../../services/consumidor/consumidor.service';
 
 export interface Medida {
   value: string;
@@ -30,10 +32,28 @@ export class DemandaComponent implements OnInit {
     { value: 'Canastilla-3', tipoMedida: 'Canastilla' },
     { value: 'Tonelada-4', tipoMedida: 'Tonelada' },
   ];
+
+  consumidor: Consumidor;
+  consumidorAc: Consumidor;
+
   constructor(private demandaService: DemandaService, private router: Router,
-    private activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder) { }
+    private activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder,private consumidorService: ConsumidorService) { }
 
   ngOnInit() {
+
+
+    this.consumidor=this.consumidorService.getUserLoggedIn();
+
+
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(coords);
+      console.log("jay", navigator.geolocation.getCurrentPosition(coords))
+}else{
+      // El navegador no soporta la geolicalización
+}
+
+function coords(position){
+}
     this.demandaService.getDemandas().subscribe((demandas) => {
       this.demandas = demandas
     });
@@ -47,8 +67,7 @@ export class DemandaComponent implements OnInit {
     });
     this.thirdFormGroup = this._formBuilder.group({
       departamentoCtrl: ['', Validators.required],
-      ciudadCtrl:['', Validators.required],
-      direccionCtrl:['', Validators.required]
+      ciudadCtrl:['', Validators.required]
     });
     this.fourthFormGroup = this._formBuilder.group({
       descripcionCtrl: ['', Validators.required]
@@ -67,10 +86,9 @@ export class DemandaComponent implements OnInit {
   }
 
   crearDemanda(): void {
-    this.demandaService.crearDemanda(this.demanda)
+    this.demandaService.crearDemanda(this.demanda, this.consumidor.cedula_consumidor)
       .subscribe(demanda => {
         this.router.navigate(['/principal'])
-
         swal("Demanda publicada", `${demanda.nombre_producto} Publicada con éxito`, "success");
         this.demanda = new Demanda();
       })
