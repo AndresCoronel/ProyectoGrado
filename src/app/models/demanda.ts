@@ -11,5 +11,6 @@ export class Demanda {
     variedad_producto: string;
     direccion_demanda: string;
     consumidor: number;
+    ciudad: number;
     create_at: string;
 }
